@@ -1,22 +1,31 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+
+import AxiosPublic from "../../../Hooks/AxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 
 const Banner = () => {
 
-  
+    const axiosPublic = AxiosPublic();
+
+
+    const { data: banner = [] } = useQuery({
+        queryKey: ["banner"],
+        queryFn: async () => {
+            const res = await axiosPublic.get("/banner");
+
+            return res.data;
+        }
+    });
+
+    console.log(banner)
+
 
     return (
         <div>
-            <Carousel autoPlay="true" stopOnHover="true">
-                <div>
-                    <img src={"https://i.ibb.co/RTDdpHP/pexels-selvin-esteban-18129619.jpg"} />
-                </div>
-                <div>
-                    <img src={"https://i.ibb.co/kXMDhR2/pexels-audrius-strikaitis-13357119.jpg"} />
+            This is Banner
 
-                </div>
-            </Carousel>
+
         </div>
     );
 };

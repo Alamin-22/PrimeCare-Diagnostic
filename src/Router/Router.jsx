@@ -5,6 +5,7 @@ import Error from "../Pages/ErrorPage/Error";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import Blog from "../Pages/Blog/Blog";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import Login from "../Pages/Authenticate/Login/Login";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: "/login",
+        element: <Login></Login>,
+    }
 ]);
 
 
