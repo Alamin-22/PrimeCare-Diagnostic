@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
         <div>
-            <footer className="px-4 py-12  bg-base-300">
+            <footer className="px-4 py-12  bg-[#73d5ee60]">
                 <div className=" w-full max-w-7xl mx-auto">
                     <div className="grid grid-cols-2 gap-10 mb-3 md:grid-cols-3 lg:grid-cols-12 lg:gap-20">
                         <div className="col-span-3">
@@ -13,7 +13,7 @@ const Footer = () => {
                                     <p className="text-sm ml-4 text-gray-700">Your Health, Our Priority</p>
                                 </div>
                             </figure>
-                            
+
                         </div>
                         <nav className="col-span-1 md:col-span-1 lg:col-span-2">
                             <p className="mb-3 text-xs font-semibold tracking-wider text-gray-400 uppercase">Product</p>
@@ -40,13 +40,12 @@ const Footer = () => {
                         </nav>
                         <div className="col-span-3">
                             <p className="mb-3 text-xs font-semibold tracking-wider text-gray-400 uppercase">SUBSCRIBE TO OUR NEWSLETTER</p>
-                            <form action="#" className="mb-2">
+                            <form  className="mb-2">
                                 <div className="form-append">
-                                    <input className="form-input form-input-sm" type="email" placeholder="Enter your email" />
-                                    <button className="btn btn-light-primary btn-sm" type="submit">Subscribe</button>
+                                    <input type="text" placeholder="Type here" className="input input-bordered input-accent w-full max-w-xs" />
+                                    <button className="btn bg-[#219ebc] hover:bg-[#3c738f] text-white  btn-sm mt-1 w-full" type="submit">Subscribe</button>
                                 </div>
                             </form>
-                            <p className="text-xs leading-normal text-gray-500">Get lessons and insights on how to grow your freelance business.</p>
                         </div>
                     </div>
                     <div className="flex flex-col items-start justify-between pt-10 mt-10 border-t border-gray-100 md:flex-row md:items-center">

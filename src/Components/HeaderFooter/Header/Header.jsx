@@ -8,14 +8,20 @@ const Header = () => {
         <li><NavLink to={"/Blog"}>Blog</NavLink></li>
         <li><NavLink to={"/ContactUs"}>ContactUs</NavLink></li>
     </>
+    const user = false;
+
+    const handleLogout = () => {
+        // logOut()
+        //     .then()
+        //     .catch()
+    }
     return (
         <div>
             <div className="drawer ">
-
                 <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col">
                     {/* Navbar */}
-                    <div className="w-full navbar bg-base-300">
+                    <div className="w-full navbar bg-[#73d5ee60]">
                         <div className=" w-full max-w-7xl mx-auto">
                             <div className="flex-none lg:hidden">
                                 <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
@@ -35,7 +41,35 @@ const Header = () => {
                                 <ul className="menu menu-horizontal">
                                     {PageLinks}
                                 </ul>
-                                <Link to={"/appointment"} className="btn btn-primary ">Appointment</Link>
+                            </div>
+                            <div>
+                                {user ? (
+                                    <div className="dropdown dropdown-end ">
+                                        <label tabIndex={0} className="cursor-pointer">
+                                            <div className="avatar online">
+                                                <div className="w-10 rounded-full">
+                                                    <img src={user.photoURL} />
+                                                    {/* <img src="https://i.ibb.co/vDKyLSS/My-Offical-pic.jpg" /> */}
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <div tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                            <p className="px-4 py-2 hover:bg-base-300 rounded-lg"> {user.displayName}</p>
+                                            <NavLink to="/DashBoard" className="px-4 py-2 hover:bg-base-300 rounded-lg">
+                                                DashBoard
+                                            </NavLink>
+
+                                            <div onClick={handleLogout}
+                                                className="cursor-pointer text-red-500 px-4 py-2 hover:bg-base-300 rounded-lg">
+                                                Logout
+                                            </div>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <NavLink to="/login" className="btn bg-[#219ebc] hover:bg-[#3c738f] text-white  btn-sm border-none ">
+                                        Login
+                                    </NavLink>
+                                )}
                             </div>
                         </div>
                     </div>
