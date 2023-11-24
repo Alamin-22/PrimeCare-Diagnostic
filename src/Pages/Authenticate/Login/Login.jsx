@@ -2,7 +2,6 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import logoAnimation from "../../../../public/Animation/Animation - 1700841251994.json"
 import Lottie from "lottie-react";
-import toast from 'react-hot-toast';
 import Header from "../../../Components/HeaderFooter/Header/Header";
 
 

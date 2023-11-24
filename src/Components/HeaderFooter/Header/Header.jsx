@@ -3,10 +3,18 @@ import { Link, NavLink } from "react-router-dom";
 const Header = () => {
 
     const PageLinks = <>
-        <li><NavLink to={"/"}>Home</NavLink></li>
-        <li><NavLink to={"/About"}>AboutUs</NavLink></li>
-        <li><NavLink to={"/Blog"}>Blog</NavLink></li>
-        <li><NavLink to={"/ContactUs"}>ContactUs</NavLink></li>
+        <li><NavLink className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:bg-[#219ebc]"
+        } to={"/"} >Home</NavLink></li>
+        <li><NavLink className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:bg-[#219ebc]"
+        } to={"/About"}>AboutUs</NavLink></li>
+        <li><NavLink className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:bg-[#219ebc]"
+        } to={"/Blog"}>Blog</NavLink></li>
+        <li><NavLink className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:bg-[#219ebc]"
+        } to={"/ContactUs"}>ContactUs</NavLink></li>
     </>
     const user = false;
 
