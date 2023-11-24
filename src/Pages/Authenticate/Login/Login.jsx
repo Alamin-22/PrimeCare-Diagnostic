@@ -2,7 +2,8 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import logoAnimation from "../../../../public/Animation/Animation - 1700841251994.json"
 import Lottie from "lottie-react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
+import Header from "../../../Components/HeaderFooter/Header/Header";
 
 
 const Login = () => {
@@ -16,33 +17,7 @@ const Login = () => {
 
         // login
         console.log(email, password)
-        Login(email, password)
-            .then(result => {
-                const loggedInUser = result.user;
-                console.log(loggedInUser);
-                const user = { email }
-                // Swal.fire('Success!', 'Login Successful', 'success')
-                toast.success(`Success! 
-                 'Login Successful`)
-                // send data via server
-
-                axios.post("/jwt", user)
-                    .then(res => {
-                        console.log(res.data);
-                        if (res.data.success) {
-                            navigate(location?.state ? location.state : '/');
-                        }
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    })
-
-
-            })
-            .catch(error => {
-                console.log(error);
-                Swal.fire('Login Failed!', 'Please make sure your  Email and Password is correct', 'error')
-            })
+        
     }
 
 
@@ -50,7 +25,8 @@ const Login = () => {
 
     return (
         <div >
-            <div className=" hero flex justify-center items-center min-h-screen " style={{ backgroundImage: 'url(https://i.ibb.co/JcsjxJP/bannere3.jpg)' }}>
+            <Header></Header>
+            <div className=" hero flex justify-center items-center min-h-[95vh] " style={{ backgroundImage: 'url(https://i.ibb.co/JcsjxJP/bannere3.jpg)' }}>
 
                 <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-gray-300 rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
                     <div className="hidden bg-cover lg:block lg:w-1/2"
@@ -82,7 +58,7 @@ const Login = () => {
 
                             <div className="mt-4">
                                 <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200" htmlFor="LoggingEmailAddress">Email Address</label>
-                                <input id="LoggingEmailAddress" className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg  dark:text-gray-300 dark:border-gray-600 focus:border-[#219ebc] focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-[#b7e3eeca]" type="email" />
+                                <input id="LoggingEmailAddress" name="email" className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg  dark:text-gray-300 dark:border-gray-600 focus:border-[#219ebc] focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-[#b7e3eeca]" placeholder="example@gmail.com" type="email" />
                             </div>
 
                             <div className="mt-4">
@@ -91,7 +67,7 @@ const Login = () => {
                                     <Link className="text-xs text-gray-500 dark:text-gray-300 hover:underline">Forget Password?</Link>
                                 </div>
 
-                                <input id="loggingPassword" className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg   dark:border-gray-600 focus:border-[#219ebc] focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-[#b7e3eeca]" type="password" />
+                                <input id="loggingPassword" name="password" className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg   dark:border-gray-600 focus:border-[#219ebc] focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-[#b7e3eeca]" placeholder="Your Password" type="password" />
                             </div>
 
                             <div className="mt-6">
