@@ -54,8 +54,6 @@ const SignUp = () => {
             .then((data) => {
 
                 const photo = data.data.url;
-
-
                 const info = { Name, email, password, District, Upazila, bloodGroup, Status, photo };
                 console.log(info);
 
@@ -64,7 +62,7 @@ const SignUp = () => {
                         UpdateProfile(Name, photo)
                             .then(() => {
                                 toast.success('Successfully toasted!');
-                                navigate('/');
+                                navigate('/dashBoard');
                             })
                         console.log(result.user);
                     })

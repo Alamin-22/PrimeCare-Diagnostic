@@ -1,5 +1,5 @@
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logoAnimation from "../../../../public/Animation/Animation - 1700841251994.json"
 import Lottie from "lottie-react";
 import Header from "../../../Components/HeaderFooter/Header/Header";
@@ -8,8 +8,9 @@ import toast from "react-hot-toast";
 
 
 const Login = () => {
-    const { GoogleSingIn } = useAuth();
-
+    const { GoogleSingIn, Login } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
     const handleLogin = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
@@ -17,6 +18,22 @@ const Login = () => {
         const password = form.get("password")
         // login
         console.log(email, password)
+
+
+        Login(email, password)
+            .then(res => {
+                const user = res.user;
+                console.log(user);
+                toast.success(`User Successfully Logged in`)
+                navigate(location?.state ? location.state : '/dashBoard');
+            })
+            .catch(error => {
+                console.log(error);
+                const message = error.message;
+                toast.error(`Error!, ${message.slice(10, 50)}`)
+            })
+
+
 
     }
 

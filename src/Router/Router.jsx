@@ -7,6 +7,7 @@ import Blog from "../Pages/Blog/Blog";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Login from "../Pages/Authenticate/Login/Login";
 import SingUp from "../Pages/Authenticate/SingUp/SingUp";
+import UserDashBoard from "../DashBoard/User/UserDashBoard";
 
 const router = createBrowserRouter([
     {
@@ -39,9 +40,16 @@ const router = createBrowserRouter([
     {
         path: "/singUp",
         element: <SingUp></SingUp>,
-        loader: ()=> fetch("/public/Data/District.json")
+        loader: () => fetch("/public/Data/District.json")
+    },
+    {
+        path: "/dashBoard",
+        element: <UserDashBoard></UserDashBoard>,
+        
     }
 ]);
+
+
 
 
 export default router;
