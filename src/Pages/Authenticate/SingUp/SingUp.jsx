@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import Header from "../../../Components/HeaderFooter/Header/Header";
+import useAuth from "../../../Hooks/useAuth";
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [Upzila, setUpzila] = useState([]);
     const status = "Active";
+    const { CreateUser, UpdateProfile } = useAuth();
+    const navigate = useNavigate();
+
     const Districts = useLoaderData()
     const handleSignUp = (e) => {
         e.preventDefault();
@@ -44,23 +48,21 @@ const SignUp = () => {
 
         const info = { Name, email, District, Upazila, bloodGroup, Status, photo }
         console.log(info);
-        // Rest of your code for user creation and profile update
-        // Uncomment and complete the remaining functionality based on your requirements
 
-        // CreateUser(email, password)
-        //   .then(result => {
-        //     UpdateProfile(name, photo)
-        //       .then(() => {
-        //         Swal.fire('Congratulation!', 'Registration Successful!', 'success')
-        //         navigate('/');
-        //       })
-        //     console.log(result.user);
-        //   })
-        //   .catch(error => {
-        //     console.log(error);
-        //     const message = error.message;
-        //     Swal.fire('Error!', `${message.slice(10, 50)}`, 'error');
-        //   });
+        CreateUser(email, password)
+            .then(result => {
+                UpdateProfile(Name, photo)
+                    .then(() => {
+                        toast.success('Successfully toasted!')
+                        navigate('/');
+                    })
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.log(error);
+                const message = error.message;
+                toast.error(`Error!, ${message.slice(10, 50)}`)
+            });
     };
 
 

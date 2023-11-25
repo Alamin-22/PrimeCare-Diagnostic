@@ -20,7 +20,7 @@ const ContactUs = () => {
 
     return (
         <div>
-            <section className="bg-white dark:bg-gray-900">
+            <section className="bg-white">
                 <div className="container px-6 py-12 mx-auto">
                     <div className="text-center">
 
@@ -87,7 +87,7 @@ const ContactUs = () => {
                         </div>
 
                         {/* Contact Form */}
-                        <div className="p-4 py-6 rounded-lg bg-gray-200  md:p-8">
+                        <div className="p-4 py-6 rounded-lg bg-emerald-50  md:p-8">
                             <form onSubmit={handleContact}>
                                 <figure>
                                     <Lottie animationData={CallAnimation} className="w-52 mx-auto"></Lottie>

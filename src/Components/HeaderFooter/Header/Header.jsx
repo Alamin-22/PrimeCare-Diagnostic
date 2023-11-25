@@ -1,7 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
 
 const Header = () => {
-
+    const { user, logOut } = useAuth();
     const PageLinks = <>
         <li><NavLink className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:bg-[#219ebc]"
@@ -16,12 +17,12 @@ const Header = () => {
             isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:bg-[#219ebc]"
         } to={"/ContactUs"}>ContactUs</NavLink></li>
     </>
-    const user = false;
+
 
     const handleLogout = () => {
-        // logOut()
-        //     .then()
-        //     .catch()
+        logOut()
+            .then()
+            .catch()
     }
     return (
         <div>
@@ -56,8 +57,7 @@ const Header = () => {
                                         <label tabIndex={0} className="cursor-pointer">
                                             <div className="avatar online">
                                                 <div className="w-10 rounded-full">
-                                                    <img src={user.photoURL} />
-                                                    {/* <img src="https://i.ibb.co/vDKyLSS/My-Offical-pic.jpg" /> */}
+                                                    <img src={user?.photoURL} />
                                                 </div>
                                             </div>
                                         </label>
