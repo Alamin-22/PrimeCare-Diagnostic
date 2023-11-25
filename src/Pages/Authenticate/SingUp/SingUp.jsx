@@ -5,14 +5,24 @@ import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import Header from "../../../Components/HeaderFooter/Header/Header";
 import useAuth from "../../../Hooks/useAuth";
 
+
+
+
+
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSING_KEY;
+
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
+
+
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [Upzila, setUpzila] = useState([]);
-    const status = "Active";
+    const Status = "Active";
     const { CreateUser, UpdateProfile } = useAuth();
     const navigate = useNavigate();
 
     const Districts = useLoaderData()
+
     const handleSignUp = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
@@ -21,47 +31,52 @@ const SignUp = () => {
         const ConfirmPassword = form.get("ConfirmPassword");
         const FirstName = form.get("FirstName");
         const LastName = form.get("LastName");
-        const Name = FirstName + " " + LastName
-        const photo = form.get("photo");
+        const Name = FirstName + " " + LastName;
         const District = form.get("District");
         const Upazila = form.get("Upazila");
         const bloodGroup = form.get("bloodGroup");
         const Status = form.get("Status");
 
-
         // confirm password validation
-
-        if (password === ConfirmPassword) {
-            // Password validation
-            if (!/^(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}$/.test(password)) {
-                toast.error("Password should be at least 8 characters, including at least one uppercase letter and at least one special character");
-                return;
-            }
-        } else {
-            toast.error("Password Does not match. Please make sure your password and confirm password is same.");
+        if (password !== ConfirmPassword || !/^(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}$/.test(password)) {
+            toast.error("Invalid password or passwords do not match.");
             return;
         }
 
+        const formData = new FormData();
+        formData.append('image', form.get("photo"));
+
+        fetch(image_hosting_api, {
+            method: 'POST',
+            body: formData,
+        })
+            .then((response) => response.json())
+            .then((data) => {
+
+                const photo = data.data.url;
 
 
+                const info = { Name, email, password, District, Upazila, bloodGroup, Status, photo };
+                console.log(info);
 
-
-        const info = { Name, email, District, Upazila, bloodGroup, Status, photo }
-        console.log(info);
-
-        CreateUser(email, password)
-            .then(result => {
-                UpdateProfile(Name, photo)
-                    .then(() => {
-                        toast.success('Successfully toasted!')
-                        navigate('/');
+                CreateUser(email, password)
+                    .then(result => {
+                        UpdateProfile(Name, photo)
+                            .then(() => {
+                                toast.success('Successfully toasted!');
+                                navigate('/');
+                            })
+                        console.log(result.user);
                     })
-                console.log(result.user);
+                    .catch(error => {
+                        console.log(error);
+                        const message = error.message;
+                        toast.error(`Error!, ${message.slice(10, 50)}`)
+                    });
             })
-            .catch(error => {
-                console.log(error);
-                const message = error.message;
-                toast.error(`Error!, ${message.slice(10, 50)}`)
+            .catch((error) => {
+                console.error("Error uploading image:", error);
+                toast.error("Error uploading image");
             });
     };
 
@@ -208,7 +223,7 @@ const SignUp = () => {
                                             <label className="label">
                                                 <span className="label-text">Photo</span>
                                             </label>
-                                            <input type="file" className="file-input file-input-bordered file-input-accent w-full max-w-xl" required />
+                                            <input type="file" name="photo" className="file-input file-input-bordered file-input-accent w-full max-w-xl" required />
                                         </div>
                                     </div>
                                 </div>
@@ -216,13 +231,13 @@ const SignUp = () => {
                                     <label className="label">
                                         <span className="label-text">Status</span>
                                     </label>
-                                    <input type="text" readOnly name="Status" defaultValue={status} className="input  input-bordered input-accent" required />
+                                    <input type="text" readOnly name="Status" defaultValue={Status} className="input  input-bordered input-accent" required />
                                 </div>
 
                             </div>
 
                             <div className="form-control mt-6">
-                                <button type="submit" className="btn btn-primary">Register</button>
+                                <button type="submit" className="btn bg-[#219ebc] hover:bg-[#3c738f] border-none text-white">Register</button>
                             </div>
                             <p className="text-center">Already have an account? <Link to={"/login"} className="font-semibold text-blue-600 underline" >LogIn</Link> </p>
                         </form>
