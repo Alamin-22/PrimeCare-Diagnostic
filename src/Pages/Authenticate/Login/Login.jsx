@@ -13,7 +13,6 @@ const Login = () => {
         const form = new FormData(e.currentTarget);
         const email = form.get("email");
         const password = form.get("password")
-
         // login
         console.log(email, password)
         
@@ -27,7 +26,7 @@ const Login = () => {
             <Header></Header>
             <div className=" hero flex justify-center items-center min-h-[95vh] " style={{ backgroundImage: 'url(https://i.ibb.co/JcsjxJP/bannere3.jpg)' }}>
 
-                <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-gray-300 rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
+                <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-gray-200 rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
                     <div className="hidden bg-cover lg:block lg:w-1/2"
                         style={{ backgroundImage: `url('https://i.ibb.co/X2nH1ww/login.jpg')` }}>
                     </div>

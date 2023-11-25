@@ -6,6 +6,7 @@ import AboutUs from "../Pages/AboutUs/AboutUs";
 import Blog from "../Pages/Blog/Blog";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Login from "../Pages/Authenticate/Login/Login";
+import SingUp from "../Pages/Authenticate/SingUp/SingUp";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
     {
         path: "/login",
         element: <Login></Login>,
+    },
+    {
+        path: "/singUp",
+        element: <SingUp></SingUp>,
+        loader: ()=> fetch("/public/Data/District.json")
     }
 ]);
 
