@@ -12,7 +12,7 @@ const Header = () => {
         } to={"/About"}>AboutUs</NavLink></li>
         <li><NavLink className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:bg-[#219ebc]"
-        } to={"/Blog"}>Blog</NavLink></li>
+        } to={"/allTest"}>All Test</NavLink></li>
         <li><NavLink className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:bg-[#219ebc]"
         } to={"/ContactUs"}>ContactUs</NavLink></li>
@@ -53,7 +53,7 @@ const Header = () => {
                             </div>
                             <div>
                                 {user ? (
-                                    <div className="dropdown dropdown-end ">
+                                    <div className="dropdown dropdown-end z-10 ">
                                         <label tabIndex={0} className="cursor-pointer">
                                             <div className="avatar online">
                                                 <div className="w-10 rounded-full">

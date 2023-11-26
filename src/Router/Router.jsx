@@ -8,6 +8,7 @@ import ContactUs from "../Pages/ContactUs/ContactUs";
 import Login from "../Pages/Authenticate/Login/Login";
 import SingUp from "../Pages/Authenticate/SingUp/SingUp";
 import UserDashBoard from "../DashBoard/User/UserDashBoard";
+import AllTest from "../Pages/AllTest/AllTest";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
                 element: <Blog />,
             },
             {
+                path: "/allTest",
+                element: <AllTest />,
+            },
+            {
                 path: "/ContactUs",
                 element: <ContactUs />
             }
@@ -45,7 +50,7 @@ const router = createBrowserRouter([
     {
         path: "/dashBoard",
         element: <UserDashBoard></UserDashBoard>,
-        
+
     }
 ]);
 

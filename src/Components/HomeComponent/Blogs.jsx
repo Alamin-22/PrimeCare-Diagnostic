@@ -11,7 +11,7 @@ const Blogs = () => {
                 <div className="flex flex-col md:flex-row gap-4 px-5  ">
                     {/* left side blogs */}
                     <div>
-                        <div className="card w-96 mx-auto my-4  bg-slate-50 shadow-xl">
+                        <div className="card w-96 mx-auto my-4  bg-slate-100 shadow-xl">
                             <div className="card-body">
                                 <div className="card-actions ">
                                     <div className="badge badge-lg badge-accent badge-outline">MRI scanning</div>
@@ -37,7 +37,7 @@ const Blogs = () => {
 
                             </div>
                         </div>
-                        <div className="card w-96 mx-auto my-4  bg-slate-50 shadow-xl">
+                        <div className="card w-96 mx-auto my-4  bg-slate-100 shadow-xl">
                             <div className="card-body">
                                 <div className="card-actions ">
                                     <div className="badge badge-lg badge-accent badge-outline">MRI scanning</div>
