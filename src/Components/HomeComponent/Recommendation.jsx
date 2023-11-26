@@ -4,8 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
-
-
+import { Autoplay,  Navigation } from 'swiper/modules';
 const Recommendation = () => {
 
 
@@ -31,10 +30,10 @@ const Recommendation = () => {
                 </p>
             </div>
             <div>
-                <Swiper slidesPerView={'auto'}
-                    spaceBetween={30} pagination={{ clickable: true, }} modules={[Pagination]} className="mySwiper">
-
+                <Swiper centeredSlides={true} autoplay={{ delay: 3500, disableOnInteraction: false, }}
+                pagination={{ clickable: true, }} modules={[Autoplay, Pagination, Navigation]}className="mySwiper cursor-grab">
                     <div>
+
                         {
                             recommendations.map(card => <SwiperSlide key={card._id}>
                                 <div className="hero h-[60vh] rounded-lg" style={{ backgroundImage: `url(${card?.image})` }}>
