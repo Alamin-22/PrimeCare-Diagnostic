@@ -13,7 +13,7 @@ const AllTest = () => {
             return res.data;
         }
     });
-    console.log(AllTest)
+    // console.log(AllTest)
 
 
     const handleSearch = (e) => {
