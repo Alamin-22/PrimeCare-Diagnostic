@@ -17,7 +17,7 @@ const SpecialOffer = () => {
                     </div>
                 </div>
                 <div>
-                    <div className="relative">
+                    <div className="relative pr-10 pb-9 md:pb-0">
                         <input type="number" className="input input-accent join-item h-16 w-80 " placeholder="Enter your phone number" />
                         <button className="btn btn-lg bg-[#219ebc] hover:bg-[#3c738f] text-white rounded-full absolute left-60 border-accent hover:border-accent ">Request</button>
                     </div>
