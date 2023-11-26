@@ -13,6 +13,12 @@ import Profile from "../DashboardPage/Profile/Profile";
 import PrivateRoute from "../Private/PrivateRoute";
 import UpComingAppointments from "../DashboardPage/UpcomingAppointments/UpComingAppointments";
 import TestResult from "../DashboardPage/Test/TestResult";
+import AddTest from "../DashboardPage/AddTest/AddTest";
+import AdminAllTests from "../DashboardPage/AdminAllTests/AdminAllTests";
+import AddBanner from "../DashboardPage/AdminBanner/AddBanner";
+import UpdateBanner from "../DashboardPage/AdminBanner/UpdateBanner";
+import AllUsers from "../DashboardPage/AllUsers/AllUsers";
+import Reservation from "../DashboardPage/Reservation/Reservation";
 
 const router = createBrowserRouter([
     {
@@ -66,6 +72,30 @@ const router = createBrowserRouter([
             {
                 path: "testResult",
                 element: <PrivateRoute><TestResult></TestResult></PrivateRoute>,
+            },
+            {
+                path: "addTest",
+                element: <AddTest></AddTest>,
+            },
+            {
+                path: "observeAllTest",
+                element: <AdminAllTests></AdminAllTests>,
+            },
+            {
+                path: "addBanner",
+                element: <AddBanner></AddBanner>,
+            },
+            {
+                path: "updateBanner",
+                element: <UpdateBanner></UpdateBanner>
+            },
+            {
+                path: "observeAllUsers",
+                element: <AllUsers></AllUsers>,
+            },
+            {
+                path: "reservation",
+                element: <Reservation></Reservation>
             }
 
         ]
