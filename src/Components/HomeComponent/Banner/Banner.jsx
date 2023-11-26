@@ -35,7 +35,7 @@ const Banner = () => {
                         <SwiperSlide key={banner._id}>
 
                             <div className="carousel w-full h-[600px]">
-                                <div className="carousel-item  relative w-full">
+                                <div className="carousel-item text-left  relative w-full">
                                     <img src={banner?.image} alt="Banner Image" className="w-full rounded-xl" />
                                     <div className="absolute rounded-xl flex items-center  left-0 h-full top-0 bg-gradient-to-r from-[#151515] from-0%  to-[rgba(21, 21, 21, 0.00)] to-90% ...">
                                         <div className="text-white pl-12 space-y-7 mb-3 w-[70%] ">
