@@ -4,6 +4,7 @@ import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import Header from "../../../Components/HeaderFooter/Header/Header";
 import useAuth from "../../../Hooks/useAuth";
+import AxiosPublic from "../../../Hooks/AxiosPublic";
 
 
 
@@ -15,11 +16,13 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 
 
 const SignUp = () => {
+    const axiosPublic = AxiosPublic();
     const [showPassword, setShowPassword] = useState(false);
     const [Upzila, setUpzila] = useState([]);
     const Status = "Active";
     const { CreateUser, UpdateProfile } = useAuth();
     const navigate = useNavigate();
+
 
     const Districts = useLoaderData()
 
@@ -59,12 +62,21 @@ const SignUp = () => {
 
                 CreateUser(email, password)
                     .then(result => {
+                        console.log(result.user);
                         UpdateProfile(Name, photo)
                             .then(() => {
-                                toast.success('Successfully toasted!');
-                                navigate('/dashBoard');
+                                // send to db
+                                axiosPublic.post("/users", info)
+                                    .then(res => {
+                                        if (res.data.insertedId) {
+                                            toast.success('User Successfully Created!');
+                                            navigate('/dashBoard/profile');
+                                        }
+                                    })
+                                    .catch(error => {
+                                        console.log(error)
+                                    })
                             })
-                        console.log(result.user);
                     })
                     .catch(error => {
                         console.log(error);

@@ -9,8 +9,6 @@ const AllTest = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const [itemPerPage, setItemPerPage] = useState(6);
 
-
-
     const { data: AllTest = [], refetch } = useQuery({
         queryKey: ["AllTest", currentPage, itemPerPage],
         queryFn: async () => {
@@ -25,8 +23,6 @@ const AllTest = () => {
     };
 
     // pagination
-
-
     const { data: TestCount = [] } = useQuery({
         queryKey: ["TestCount"],
         queryFn: async () => {
@@ -83,8 +79,7 @@ const AllTest = () => {
                 <button className="btn" onClick={handlePrevPage}>Prev</button>
                 {
                     pages.map((page, idx) => <button
-                        className={currentPage === page ? " btn btn-primary  " : "btn "}
-                        // className={currentPage ? page && "selected"  }
+                        className={currentPage === page ? " btn bg-[#219ebc] hover:bg-[#3c738f] text-white  " : "btn "}
                         onClick={() => setCurrentPage(page)}
                         key={idx}>{page}
                     </button>)

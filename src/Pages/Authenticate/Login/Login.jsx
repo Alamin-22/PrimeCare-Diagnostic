@@ -5,10 +5,12 @@ import Lottie from "lottie-react";
 import Header from "../../../Components/HeaderFooter/Header/Header";
 import useAuth from "../../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import AxiosPublic from "../../../Hooks/AxiosPublic";
 
 
 const Login = () => {
     const { GoogleSingIn, Login } = useAuth();
+    const axiosPublic = AxiosPublic();
     const navigate = useNavigate();
     const location = useLocation();
     const handleLogin = (e) => {
@@ -41,20 +43,21 @@ const Login = () => {
         media()
             .then(res => {
                 console.log(res.user);
-                toast.success("Good job!", "Login Successful!")
-                // send cookie to the server
-                // const email = res.user.email;
-                // const user = { email }
-                // axios.post("/jwt", user)
-                //     .then(res => {
-                //         console.log(res.data);
-                //         if (res.data.success) {
-                //             navigate(location?.state ? location.state : '/');
-                //         }
-                //     })
-                //     .catch(error => {
-                //         console.log(error);
-                //     })
+                // send to db
+                const info = {
+                    email: res.user?.email,
+                    name: res.user?.displayName
+                }
+                axiosPublic.post("/users", info)
+                    .then(res => {
+                        if (res.data.insertedId) {
+                            toast.success('User Successfully Created!');
+                            navigate(location?.state ? location.state : '/dashBoard');
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
 
             })
             .catch(error => {

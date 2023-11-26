@@ -15,7 +15,6 @@ const FeaturedTest = () => {
             return featuredTests;
         }
     });
-    console.log(FeaturedTests)
 
 
     return (

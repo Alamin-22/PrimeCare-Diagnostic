@@ -17,7 +17,6 @@ const Recommendation = () => {
             return res.data;
         }
     });
-    console.log(recommendations);
 
 
 

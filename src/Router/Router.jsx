@@ -7,8 +7,12 @@ import Blog from "../Pages/Blog/Blog";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Login from "../Pages/Authenticate/Login/Login";
 import SingUp from "../Pages/Authenticate/SingUp/SingUp";
-import UserDashBoard from "../DashBoard/User/UserDashBoard";
 import AllTest from "../Pages/AllTest/AllTest";
+import DashBoardLayout from "../Layout/DashBoardLayout";
+import Profile from "../DashboardPage/Profile/Profile";
+import PrivateRoute from "../Private/PrivateRoute";
+import UpComingAppointments from "../DashboardPage/UpcomingAppointments/UpComingAppointments";
+import TestResult from "../DashboardPage/Test/TestResult";
 
 const router = createBrowserRouter([
     {
@@ -48,8 +52,23 @@ const router = createBrowserRouter([
         loader: () => fetch("/public/Data/District.json")
     },
     {
-        path: "/dashBoard",
-        element: <UserDashBoard></UserDashBoard>,
+        path: "dashBoard",
+        element: <DashBoardLayout></DashBoardLayout>,
+        children: [
+            {
+                path: "profile",
+                element: <PrivateRoute><Profile></Profile></PrivateRoute>,
+            },
+            {
+                path: "ComingAppointments",
+                element: <PrivateRoute><UpComingAppointments></UpComingAppointments></PrivateRoute>
+            },
+            {
+                path: "testResult",
+                element: <PrivateRoute><TestResult></TestResult></PrivateRoute>,
+            }
+
+        ]
 
     }
 ]);
