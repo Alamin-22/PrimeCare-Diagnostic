@@ -3,11 +3,9 @@ import AxiosSecure from "../../Hooks/AxiosSecure";
 import { MdDeleteForever } from "react-icons/md";
 import { FaInfoCircle } from "react-icons/fa";
 import Swal from "sweetalert2";
-import useAdmin from "../../Hooks/useAdmin";
 const AllUsers = () => {
     const axiosSecure = AxiosSecure();
-    const [admin, adminLoading] = useAdmin();
-    console.log(admin, adminLoading)
+
 
     const { data: users = [], refetch } = useQuery({
         queryKey: ["users"],

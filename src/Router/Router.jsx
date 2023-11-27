@@ -20,6 +20,7 @@ import UpdateBanner from "../DashboardPage/AdminBanner/UpdateBanner";
 import AllUsers from "../DashboardPage/AllUsers/AllUsers";
 import Reservation from "../DashboardPage/Reservation/Reservation";
 import AdminProfile from "../DashboardPage/AdminProfile/AdminProfile";
+import UpdateTest from "../DashboardPage/AdminAllTests/UpdateTest";
 
 const router = createBrowserRouter([
     {
@@ -82,6 +83,12 @@ const router = createBrowserRouter([
                 path: "addTest",
                 element: <AddTest></AddTest>,
             },
+            {
+                path: "UpdateTest/:id",
+                element: <UpdateTest></UpdateTest>,
+                loader: ({ params }) => fetch(`http://localhost:5000/test/${params.id}`)
+            }
+            ,
             {
                 path: "observeAllTest",
                 element: <AdminAllTests></AdminAllTests>,
