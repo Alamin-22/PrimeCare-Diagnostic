@@ -27,7 +27,7 @@ const Login = () => {
                 const user = res.user;
                 console.log(user);
                 toast.success(`User Successfully Logged in`)
-                navigate(location?.state ? location.state : '/dashBoard');
+                navigate(location?.state ? location.state : '/dashBoard/profile');
             })
             .catch(error => {
                 console.log(error);
@@ -52,8 +52,10 @@ const Login = () => {
                     .then(res => {
                         if (res.data.insertedId) {
                             toast.success('User Successfully Created!');
-                            navigate(location?.state ? location.state : '/dashBoard');
+                            navigate(location?.state ? location.state : '/dashBoard/profile');
                         }
+                        toast.success('User Successfully Login!');
+                        navigate(location?.state ? location.state : '/dashBoard/profile');
                     })
                     .catch(error => {
                         console.log(error)

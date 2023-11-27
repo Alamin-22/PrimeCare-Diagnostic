@@ -1,54 +1,94 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 const Header = () => {
     const { user, logOut } = useAuth();
     const isAdmin = true;
 
     const PageLinks = <>
-        <li><NavLink className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
-        } to={"/"} >Home</NavLink></li>
-        <li><NavLink className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
-        } to={"/About"}>AboutUs</NavLink></li>
-        <li><NavLink className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
-        } to={"/allTest"}>All Test</NavLink></li>
-        {user && <>
-            <li><NavLink className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
-            } to={"/dashboard/ComingAppointments"}>UpComing Appointments</NavLink></li>
-            <li><NavLink className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
-            } to={"/dashboard/testResult"}>Test Result</NavLink></li>
-        </>}
-        {isAdmin && <>
-            <li><NavLink className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
-            } to={"/dashboard/addTest"}>Add Test</NavLink></li>
-            <li><NavLink className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
-            } to={"/dashboard/observeAllTest"}>Observe Tests</NavLink></li>
-            <li><NavLink className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
-            } to={"/dashboard/addBanner"}>Add Banner</NavLink></li>
-            <li><NavLink className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
-            } to={"/dashboard/updateBanner"}>updateBanner</NavLink></li>
-            <li><NavLink className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
-            } to={"/dashboard/observeAllUsers"}>Observe Users</NavLink></li>
-            <li><NavLink className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
-            } to={"/dashboard/reservation"}>Reservation</NavLink></li>
-        </>}
-
-        <li><NavLink className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
-        } to={"/ContactUs"}>ContactUs</NavLink></li>
 
 
+        {
+            user && isAdmin ?
+                <>
+                    <div className="dropdown dropdown-hover ">
+                        <div tabIndex={0} role="button" className="btn font-medium btn-sm bg-transparent border-none hover:text-white hover:bg-[#219ebc]  m-1">Home Routes <RiArrowDropDownLine className="text-3xl" /></div>
+                        <ul className="dropdown-content  z-10 menu p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><NavLink className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                            } to={"/"} >Home</NavLink></li>
+                            <li><NavLink className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                            } to={"/About"}>AboutUs</NavLink></li>
+                            <li><NavLink className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                            } to={"/allTest"}>All Test</NavLink></li>
+                        </ul>
+                    </div>
+
+                    <li><NavLink className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                    } to={"/dashboard/addTest"}>Add Test</NavLink></li>
+                    <li><NavLink className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                    } to={"/dashboard/observeAllTest"}>Observe Tests</NavLink></li>
+                    <li><NavLink className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                    } to={"/dashboard/addBanner"}>Add Banner</NavLink></li>
+                    <li><NavLink className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                    } to={"/dashboard/updateBanner"}>updateBanner</NavLink></li>
+                    <li><NavLink className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                    } to={"/dashboard/observeAllUsers"}>Observe Users</NavLink></li>
+                    <li><NavLink className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                    } to={"/dashboard/reservation"}>Reservation</NavLink></li>
+
+                </>
+                :
+                <>
+                    {
+                        user ?
+                            <>
+                                <li><NavLink className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                                } to={"/"} >Home</NavLink></li>
+                                <li><NavLink className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                                } to={"/About"}>AboutUs</NavLink></li>
+                                <li><NavLink className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                                } to={"/allTest"}>All Test</NavLink></li>
+                                <li><NavLink className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                                } to={"/dashboard/ComingAppointments"}>UpComing Appointments</NavLink></li>
+                                <li><NavLink className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                                } to={"/dashboard/testResult"}>Test Result</NavLink></li>
+                                <li><NavLink className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                                } to={"/ContactUs"}>ContactUs</NavLink></li>
+                            </>
+                            :
+                            <>
+                                <li><NavLink className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                                } to={"/"} >Home</NavLink></li>
+                                <li><NavLink className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                                } to={"/About"}>AboutUs</NavLink></li>
+                                <li><NavLink className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                                } to={"/allTest"}>All Test</NavLink></li>
+                                <li><NavLink className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
+                                } to={"/ContactUs"}>ContactUs</NavLink></li>
+                            </>
+                    }
+                </>
+        }
     </>
 
 
