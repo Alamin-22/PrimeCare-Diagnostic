@@ -19,6 +19,7 @@ import AddBanner from "../DashboardPage/AdminBanner/AddBanner";
 import UpdateBanner from "../DashboardPage/AdminBanner/UpdateBanner";
 import AllUsers from "../DashboardPage/AllUsers/AllUsers";
 import Reservation from "../DashboardPage/Reservation/Reservation";
+import AdminProfile from "../DashboardPage/AdminProfile/AdminProfile";
 
 const router = createBrowserRouter([
     {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
             {
                 path: "profile",
                 element: <PrivateRoute><Profile></Profile></PrivateRoute>,
+            },
+            {
+                path: "AdminProfile",
+                element: <AdminProfile></AdminProfile>
             },
             {
                 path: "ComingAppointments",

@@ -136,9 +136,20 @@ const Header = () => {
                                         </label>
                                         <div tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                                             <p className="px-4 py-2 hover:bg-base-300 rounded-lg"> {user.displayName}</p>
-                                            <NavLink to="/dashboard/profile" className="px-4 py-2 hover:bg-base-300 rounded-lg">
-                                                DashBoard
-                                            </NavLink>
+                                            {
+                                                isAdmin ? <>
+                                                    <NavLink to="/dashboard/AdminProfile" className="px-4 py-2 hover:bg-base-300 rounded-lg">
+                                                        Admin DashBoard
+                                                    </NavLink>
+                                                </>
+                                                    :
+                                                    <>
+                                                        <NavLink to="/dashboard/profile" className="px-4 py-2 hover:bg-base-300 rounded-lg">
+                                                            DashBoard
+                                                        </NavLink>
+                                                    </>
+                                            }
+
 
                                             <div onClick={handleLogout}
                                                 className="cursor-pointer text-red-500 px-4 py-2 hover:bg-base-300 rounded-lg">
