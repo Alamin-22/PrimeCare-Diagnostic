@@ -27,6 +27,17 @@ const AllUsers = () => {
                 }
             })
     }
+    const handleBlock = (user) => {
+        
+        axiosSecure.patch(`/users/${user._id}`)
+            .then(res => {
+                console.log(res.data);
+                if (res.data.modifiedCount > 0) {
+                    refetch();
+                    Swal.fire("Congratulations", `${user?.Name} is now Admin!!`, "success");
+                }
+            })
+    }
 
 
 
@@ -113,7 +124,11 @@ const AllUsers = () => {
                                     </button>
                                 </td>
                                 <td >
-                                    active
+                                    {
+                                        user?.Status === "Active" ? "Active" : <button onClick={() => handleBlock(user)} className="btn btn-outline btn-success btn-sm ">
+                                            Block
+                                        </button>
+                                    }
                                 </td>
                                 <td >
                                     {

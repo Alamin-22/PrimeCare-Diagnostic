@@ -52,7 +52,9 @@ const Login = () => {
                 // send to db
                 const info = {
                     email: res.user?.email,
-                    Name: res.user?.displayName
+                    Name: res.user?.displayName,
+                    photo:res.user?.photoURL,
+                    Status: "Active",
                 }
                 axiosPublic.post("/users", info)
                     .then(res => {
