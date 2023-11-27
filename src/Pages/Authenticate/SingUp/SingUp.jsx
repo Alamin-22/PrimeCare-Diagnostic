@@ -22,7 +22,6 @@ const SignUp = () => {
     const Status = "Active";
     const { CreateUser, UpdateProfile } = useAuth();
     const navigate = useNavigate();
-    const isAdmin = true;
 
 
     const Districts = useLoaderData()
@@ -71,12 +70,9 @@ const SignUp = () => {
                                     .then(res => {
                                         if (res.data.insertedId) {
                                             toast.success('User Successfully Created!');
-                                            {
-                                                isAdmin ?
-                                                    navigate(location?.state ? location.state : '/dashBoard/AdminProfile')
-                                                    :
-                                                    navigate(location?.state ? location.state : '/dashBoard/profile');
-                                            }
+
+                                            navigate(location?.state ? location.state : '/dashboard');
+
                                         }
                                     })
                                     .catch(error => {

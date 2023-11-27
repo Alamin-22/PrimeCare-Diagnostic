@@ -1,252 +1,192 @@
 [
     {
-        "testId": "001",
         "title": "Comprehensive Blood Test",
         "shortDescription": "A detailed analysis of blood components for a comprehensive health assessment.",
         "description": "The Comprehensive Blood Test is a vital diagnostic tool that provides a detailed analysis of various blood components. This test covers a wide range of parameters, including complete blood count (CBC), cholesterol levels, glucose levels, and more. It aids in assessing overall health, detecting potential issues, and guiding further medical interventions. Schedule your appointment for this essential test today.",
         "image": "https://i.ibb.co/1vFQ1g7/blodtest.jpg",
-        "availableDates":"05-12-2023",
-        "slot": {
-            "time": "09:00 AM - 10:00 AM",
-            "available": 10
-        },
+        "availableDates": "05-12-2023",
+        "time": "09:00 AM - 10:00 AM",
+        "availableSlot": 10,
         "featured": true
     },
     {
-        "testId": "002",
         "title": "MRI Scan",
         "shortDescription": "Detailed magnetic resonance imaging for precise diagnosis.",
         "description": "The MRI Scan is a non-invasive imaging technique that uses powerful magnets and radio waves to create detailed images of internal structures. It is highly effective in diagnosing conditions related to the brain, joints, spine, and soft tissues. Our advanced MRI technology ensures precise and accurate results. Book your MRI Scan appointment for a thorough examination and precise diagnosis.",
         "image": "https://i.ibb.co/WGGJc3x/mriscam.jpg",
-        "availableDates":"02-12-2023",
-            
-        "slot": {
-            "time": "10:30 AM - 11:30 AM",
-            "available": 5
-        },
+        "availableDates": "02-12-2023",
+        "time": "10:30 AM - 11:30 AM",
+        "availableSlot": 5,
         "featured": false
     },
     {
-        "testId": "003",
         "title": "Electrocardiogram (ECG)",
         "shortDescription": "Electrical activity analysis for heart health assessment.",
         "description": "The Electrocardiogram (ECG) is a diagnostic test that records the electrical activity of the heart over a period of time. It is a crucial tool for assessing heart health, detecting irregularities, and diagnosing cardiac conditions. Our experienced technicians ensure accurate ECG results for a comprehensive understanding of your heart's function. Schedule your ECG appointment today for a proactive approach to heart health.",
         "image": "https://i.ibb.co/2sVSN9w/ecg.jpg",
-        "availableDates":"08-12-2023",
-
-        "slot": {
-            "time": "08:30 AM - 09:30 AM",
-            "available": 7
-        },
+        "availableDates": "08-12-2023",
+        "time": "08:30 AM - 09:30 AM",
+        "availableSlot": 7,
         "featured": true
     },
     {
-        "testId": "004",
         "title": "X-ray Imaging",
         "shortDescription": "Radiographic imaging for detailed visualization of skeletal structures.",
         "description": "X-ray imaging is a widely used diagnostic technique that produces images of the internal structures of the body, particularly the bones. It is valuable for detecting fractures, joint conditions, and certain infections. Our state-of-the-art X-ray equipment ensures high-quality imaging with minimal exposure. Schedule your X-ray appointment for accurate and detailed visualization of skeletal structures.",
         "image": "https://i.ibb.co/ggdn4Kn/xray.jpg",
-        "availableDates":"04-11-2023",
-            
-        "slot": {
-            "time": "09:30 AM - 10:30 AM",
-            "available": 8
-        },
+        "availableDates": "04-11-2023",
+        "time": "09:30 AM - 10:30 AM",
+        "availableSlot": 8,
         "featured": false
     },
     {
-        "testId": "005",
         "title": "Pap Smear",
         "shortDescription": "Screening for cervical cancer in women.",
         "description": "The Pap Smear is a routine screening test for cervical cancer in women. It involves collecting cells from the cervix to identify any abnormalities or early signs of cancer. Early detection through regular Pap Smears is crucial for effective intervention. Our skilled healthcare professionals ensure a comfortable and accurate screening process. Schedule your Pap Smear appointment for proactive women's health.",
         "image": "https://i.ibb.co/XWkRVvF/pap.jpg",
         "availableDates": "06-12-2023",
-        "slot": {
-            "time": "10:00 AM - 11:00 AM",
-            "available": 6
-        },
+        "time": "10:00 AM - 11:00 AM",
+        "availableSlot": 6,
         "featured": true
     },
     {
-        "testId": "006",
         "title": "Cholesterol Test",
         "shortDescription": "Measuring cholesterol levels for cardiovascular health assessment.",
         "description": "The Cholesterol Test is a blood test that measures the levels of cholesterol and triglycerides in the blood. It is a crucial component of cardiovascular health assessment, helping to identify the risk of heart disease. Our comprehensive cholesterol test provides valuable insights for preventive care. Schedule your Cholesterol Test appointment for a proactive approach to heart health.",
         "image": "https://i.ibb.co/WVqmX6P/pexels-karolina-grabowska-4230623.jpg",
-        "availableDates":"13-12-2023",
-        "slot": {
-            "time": "08:00 AM - 09:00 AM",
-            "available": 12
-        },
+        "availableDates": "13-12-2023",
+        "time": "08:00 AM - 09:00 AM",
+        "availableSlot": 12,
         "featured": false
     },
     {
-        "testId": "007",
         "title": "Allergy Testing",
         "shortDescription": "Identification of allergens through comprehensive allergy testing.",
         "description": "Allergy Testing is a diagnostic process that helps identify specific allergens triggering allergic reactions. Our comprehensive allergy tests cover a wide range of potential allergens, providing valuable information for personalized allergy management. Schedule your Allergy Testing appointment for a targeted approach to understanding and managing your allergies.",
         "image": "https://i.ibb.co/wScZ1t4/pexels-castorly-stock-4058278.jpg",
-        "availableDates":"17-12-2023",
-        "slot": {
-            "time": "09:30 AM - 10:30 AM",
-            "available": 8
-        },
+        "availableDates": "17-12-2023",
+        "time": "09:30 AM - 10:30 AM",
+        "availableSlot": 8,
         "featured": true
     },
     {
-        "testId": "008",
         "title": "Bone Density Scan",
         "shortDescription": "Assessment of bone strength and risk of fractures.",
         "description": "The Bone Density Scan, also known as DEXA scan, is a specialized test to assess bone strength and density. It is particularly valuable for evaluating the risk of osteoporosis and fractures. Our advanced technology provides accurate and detailed information about bone health. Schedule your Bone Density Scan appointment for a proactive approach to maintaining strong and healthy bones.",
         "image": "https://i.ibb.co/wpNncx0/haddi.jpg",
-        "availableDates":"20-12-2023",
-        "slot": {
-            "time": "10:00 AM - 11:00 AM",
-            "available": 7
-        },
+        "availableDates": "20-12-2023",
+        "time": "10:00 AM - 11:00 AM",
+        "availableSlot": 7,
         "featured": false
     },
     {
-        "testId": "009",
         "title": "Thyroid Function Test",
         "shortDescription": "Evaluation of thyroid hormone levels for thyroid health.",
         "description": "The Thyroid Function Test is a blood test that evaluates the levels of thyroid hormones. It plays a crucial role in assessing thyroid health and identifying conditions such as hypothyroidism and hyperthyroidism. Our comprehensive test provides valuable insights for thyroid management. Schedule your Thyroid Function Test appointment for a proactive approach to thyroid health.",
         "image": "https://i.ibb.co/3dXpBx6/pexels-edward-jenner-4031323.jpg",
-        "availableDates":"21-12-2023",
-        "slot": {
-            "time": "08:30 AM - 09:30 AM",
-            "available": 6
-        },
+        "availableDates": "21-12-2023",
+        "time": "08:30 AM - 09:30 AM",
+        "availableSlot": 6,
         "featured": true
     },
     {
-        "testId": "010",
         "title": "Prostate-Specific Antigen (PSA) Test",
         "shortDescription": "Screening for prostate health in men.",
         "description": "The Prostate-Specific Antigen (PSA) Test is a blood test that measures the levels of PSA, a protein produced by the prostate gland. It is a valuable tool for screening and monitoring prostate health. Our PSA Test contributes to early detection and management of prostate conditions. Schedule your PSA Test appointment for proactive men's health.",
         "image": "https://i.ibb.co/XWkRVvF/pap.jpgg",
-        "availableDates":"28-12-2023",
-        "slot": {
-            "time": "10:30 AM - 11:30 AM",
-            "available": 9
-        },
+        "availableDates": "28-12-2023",
+        "time": "10:30 AM - 11:30 AM",
+        "availableSlot": 9,
         "featured": false
     },
     {
-        "testId": "011",
         "title": "Gastrointestinal Endoscopy",
         "shortDescription": "Visual examination of the digestive tract for diagnostic purposes.",
         "description": "Gastrointestinal Endoscopy is a procedure that involves the insertion of a flexible tube with a camera through the mouth or rectum to visualize the digestive tract. It is a valuable diagnostic tool for detecting conditions such as ulcers, inflammation, and tumors. Schedule your Gastrointestinal Endoscopy appointment for a thorough examination and accurate diagnosis.",
         "image": "https://i.ibb.co/XWkRVvF/pap.jpg",
-        "availableDates":"05-01-2024",
-        "slot": {
-            "time": "09:00 AM - 10:00 AM",
-            "available": 8
-        },
+        "availableDates": "05-01-2024",
+        "time": "09:00 AM - 10:00 AM",
+        "availableSlot": 8,
         "featured": true
     },
     {
-        "testId": "013",
         "title": "Colonoscopy",
         "shortDescription": "Endoscopic examination of the large intestine for colorectal health.",
         "description": "Colonoscopy is an endoscopic procedure that allows the examination of the entire large intestine. It is a key screening tool for colorectal cancer and helps detect and prevent conditions such as polyps. Schedule your Colonoscopy appointment for a comprehensive assessment of colorectal health.",
         "image": "https://i.ibb.co/XWkRVvF/pap.jpg",
-        "availableDates":"07-01-2024",
-        "slot": {
-            "time": "08:30 AM - 09:30 AM",
-            "available": 9
-        },
+        "availableDates": "07-01-2024",
+        "time": "08:30 AM - 09:30 AM",
+        "availableSlot": 9,
         "featured": true
     },
     {
-        "testId": "014",
         "title": "Glucose Tolerance Test",
         "shortDescription": "Evaluation of blood sugar levels for diabetes assessment.",
         "description": "The Glucose Tolerance Test is a diagnostic test that evaluates how the body processes glucose. It is a crucial tool for diagnosing diabetes and assessing insulin sensitivity. Our comprehensive test provides valuable insights for diabetes management. Schedule your Glucose Tolerance Test appointment for a proactive approach to blood sugar control.",
         "image": "https://i.ibb.co/1vFQ1g7/blodtest.jpg",
-        "availableDates":"08-01-2024",
-        "slot": {
-            "time": "09:30 AM - 10:30 AM",
-            "available": 10
-        },
+        "availableDates": "08-01-2024",
+        "time": "09:30 AM - 10:30 AM",
+        "availableSlot": 10,
         "featured": false
     },
     {
-        "testId": "015",
         "title": "HIV/AIDS Test",
         "shortDescription": "Screening for the human immunodeficiency virus (HIV).",
         "description": "The HIV/AIDS Test is a diagnostic test that detects the presence of the human immunodeficiency virus (HIV). It is a crucial step in early detection and management of HIV/AIDS. Our confidential testing ensures accurate results and privacy. Schedule your HIV/AIDS Test appointment for proactive health management.",
         "image": "https://i.ibb.co/1vFQ1g7/blodtest.jpg",
-        "availableDates":"09-01-2024",
-        "slot": {
-            "time": "10:00 AM - 11:00 AM",
-            "available": 11
-        },
+        "availableDates": "09-01-2024",
+        "time": "10:00 AM - 11:00 AM",
+        "availableSlot": 11,
         "featured": true
     },
     {
-        "testId": "016",
         "title": "Vision Test",
         "shortDescription": "Comprehensive eye examination for visual health.",
         "description": "The Vision Test is a comprehensive eye examination that assesses visual acuity and detects common eye conditions. It is essential for maintaining good eye health and preventing vision problems. Our experienced optometrists ensure accurate and detailed results. Schedule your Vision Test appointment for proactive eye care.",
         "image": "https://i.ibb.co/L81WnmT/vision.jpg",
-        "availableDates":"09-12-2023",
-        "slot": {
-            "time": "08:00 AM - 09:00 AM",
-            "available": 12
-        },
+        "availableDates": "09-12-2023",
+        "time": "08:00 AM - 09:00 AM",
+        "availableSlot": 12,
         "featured": false
     },
     {
-        "testId": "017",
         "title": "Spirometry",
         "shortDescription": "Lung function test for respiratory health assessment.",
         "description": "Spirometry is a lung function test that measures how well the lungs inhale and exhale air. It is a valuable tool for assessing respiratory health and diagnosing conditions such as asthma and chronic obstructive pulmonary disease (COPD). Schedule your Spirometry appointment for a comprehensive lung function assessment.",
         "image": "https://i.ibb.co/1vFQ1g7/blodtest.jpg",
-        "availableDates":"05-12-2023",
-        "slot": {
-            "time": "09:30 AM - 10:30 AM",
-            "available": 8
-        },
+        "availableDates": "05-12-2023",
+        "time": "09:30 AM - 10:30 AM",
+        "availableSlot": 8,
         "featured": true
     },
     {
-        "testId": "018",
         "title": "Rheumatoid Arthritis Blood Test",
         "shortDescription": "Blood test for diagnosing rheumatoid arthritis.",
         "description": "The Rheumatoid Arthritis Blood Test is a diagnostic test that detects specific antibodies associated with rheumatoid arthritis. It is a crucial tool for early diagnosis and management of this autoimmune condition. Our comprehensive test provides valuable insights for rheumatoid arthritis management. Schedule your Rheumatoid Arthritis Blood Test appointment for proactive joint health.",
         "image": "https://i.ibb.co/1vFQ1g7/blodtest.jpg",
-        "availableDates":"09-12-2023",
-        "slot": {
-            "time": "10:00 AM - 11:00 AM",
-            "available": 7
-        },
+        "availableDates": "09-12-2023",
+        "time": "10:00 AM - 11:00 AM",
+        "availableSlot": 7,
         "featured": false
     },
     {
-        "testId": "019",
         "title": "Dental Checkup",
         "shortDescription": "Comprehensive examination for oral health.",
         "description": "The Dental Checkup is a comprehensive examination of oral health, including teeth and gums. It is essential for preventing dental issues and maintaining good oral hygiene. Our experienced dentists ensure thorough examinations and provide personalized dental care recommendations. Schedule your Dental Checkup appointment for proactive oral health.",
         "image": "https://i.ibb.co/wQ2524V/dental.jpg",
-        "availableDates":"29-11-2023",
-        "slot": {
-            "time": "08:30 AM - 09:30 AM",
-            "available": 9
-        },
+        "availableDates": "29-11-2023",
+        "time": "08:30 AM - 09:30 AM",
+        "availableSlot": 9,
         "featured": true
     },
     {
-        "testId": "020",
         "title": "Genetic Testing",
         "shortDescription": "Analysis of genetic markers for personalized health insights.",
         "description": "Genetic Testing involves analyzing DNA to identify genetic markers associated with health and disease. It provides personalized insights into potential health risks and allows for proactive health management. Our advanced genetic testing services offer a comprehensive understanding of your genetic makeup. Schedule your Genetic Testing appointment for personalized health insights.",
         "image": "https://i.ibb.co/PZJG4tP/brano-Mm1-VIPqd0-OA-unsplash.jpg",
-        "availableDates":"25-12-2023",
-        "slot": {
-            "time": "09:00 AM - 10:00 AM",
-            "available": 10
-        },
+        "availableDates": "25-12-2023",
+        "time": "09:00 AM - 10:00 AM",
+        "availableSlot": 10,
         "featured": false
     }
 ]

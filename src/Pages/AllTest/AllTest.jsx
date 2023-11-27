@@ -33,7 +33,6 @@ const AllTest = () => {
 
     const numberOfPages = Math.ceil(TestCount / itemPerPage);
     const pages = [...Array(numberOfPages).keys()];
-    console.log(pages);
     const handleItemPerPage = e => {
         const val = parseInt(e.target.value);
         console.log(val);

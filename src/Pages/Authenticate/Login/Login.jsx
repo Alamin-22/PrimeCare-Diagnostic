@@ -9,7 +9,6 @@ import AxiosPublic from "../../../Hooks/AxiosPublic";
 
 
 const Login = () => {
-    const isAdmin = true;
     const { GoogleSingIn, Login } = useAuth();
     const axiosPublic = AxiosPublic();
     const navigate = useNavigate();
@@ -28,12 +27,7 @@ const Login = () => {
                 const user = res.user;
                 console.log(user);
                 toast.success(`User Successfully Logged in`)
-                {
-                    isAdmin ?
-                        navigate(location?.state ? location.state : '/dashBoard/AdminProfile')
-                        :
-                        navigate(location?.state ? location.state : '/dashBoard/profile');
-                }
+                navigate(location?.state ? location.state : '/dashboard')
             })
             .catch(error => {
                 console.log(error);
@@ -53,27 +47,18 @@ const Login = () => {
                 const info = {
                     email: res.user?.email,
                     Name: res.user?.displayName,
-                    photo:res.user?.photoURL,
+                    photo: res.user?.photoURL,
                     Status: "Active",
                 }
                 axiosPublic.post("/users", info)
                     .then(res => {
                         if (res.data.insertedId) {
                             toast.success('User Successfully Created!');
-                            {
-                                isAdmin ?
-                                    navigate(location?.state ? location.state : '/dashBoard/AdminProfile')
-                                    :
-                                    navigate(location?.state ? location.state : '/dashBoard/profile');
-                            }
+                            navigate(location?.state ? location.state : '/dashboard')
                         }
                         toast.success('User Successfully Login!');
-                        {
-                            isAdmin ?
-                                navigate(location?.state ? location.state : '/dashBoard/AdminProfile')
-                                :
-                                navigate(location?.state ? location.state : '/dashBoard/profile');
-                        }
+                        navigate(location?.state ? location.state : '/dashboard')
+
                     })
                     .catch(error => {
                         console.log(error)
