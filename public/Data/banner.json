@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Welcome to Our Diagnostic Center!",
+        "image": "https://i.ibb.co/8485hBm/online-marketing-h-Igeo-Qj-S-i-E-unsplash.jpg",
+        "text": "Explore our latest diagnostic services",
+        "couponCode": "HEALTHY10",
+        "discountRate": 10,
+        "isActive": true
+    },
+    {
+        "title": "Health Checkup Flash Sale!",
+        "image": "https://i.ibb.co/R2g6gBG/Capture.jpg",
+        "text": "Hurry up! Limited-time offers on health checkups",
+        "couponCode": "CHECKUP20",
+        "discountRate": 20,
+        "isActive": true
+    },
+    {
+        "title": "Stay Healthy This Summer!",
+        "image": "https://i.ibb.co/dGRzCyK/2.jpg",
+        "text": "Exclusive summer discounts on preventive care",
+        "couponCode": "PREVENT15",
+        "discountRate": 15,
+        "isActive": true
+    }
+]

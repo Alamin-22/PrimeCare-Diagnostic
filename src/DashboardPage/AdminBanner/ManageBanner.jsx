@@ -50,7 +50,7 @@ const ManageBanner = () => {
 
 
 
-    const handleDeleteUser = (test) => {
+    const handleDeleteUser = (banner) => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -64,14 +64,14 @@ const ManageBanner = () => {
 
 
 
-                axiosPublic.delete(`/banner/${test._id}`)
+                axiosPublic.delete(`/banner/${banner._id}`)
                     .then(res => {
                         console.log(res.data)
                         if (res.data.deletedCount) {
                             refetch();
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your file has been deleted.",
+                                text: "Your banner has been deleted.",
                                 icon: "success"
                             });
                         }
@@ -102,6 +102,7 @@ const ManageBanner = () => {
                             <th>Discount Rate</th>
                             <th>Display</th>
                             <th>Delete</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
