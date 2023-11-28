@@ -1,11 +1,33 @@
+import { useState } from "react";
+import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
+import Payment from "./Payments/Payment";
 
 const TestDetails = () => {
     const [specificTest] = useLoaderData();
     const { title, featured, shortDescription, description, image, time, price, availableSlot, availableDates, } = specificTest;
 
+    // const [slot, setSlot] = useState(availableSlot - 1);
+    const [isApplicationOpen, setApplicationOpen] = useState(false);
+
+
+    const handleBookNow = () => {
+        if (!availableSlot > 0) {
+            toast.error("Sorry There are no slot available for this test.")
+            return
+        } else {
+            console.log("yea i can book this test")
+            // setSlot(slot => slot - 1);
+            setApplicationOpen(true);
+        }
+    };
+
+
+
+
+
     return (
-        <div className=" hero flex justify-center items-center min-h-[95vh] " style={{ backgroundImage: 'url(https://i.ibb.co/JcsjxJP/bannere3.jpg)' }}>
+        <div>
             <div className="max-w-2xl px-8 mx-auto py-4 bg-white rounded-lg shadow-md ">
                 <figure className="relative" >
                     {
@@ -40,9 +62,26 @@ const TestDetails = () => {
                         <p className="text-lg  text-gray-700  hover:text-gray-600 ">Reservation price: $ {price}</p>
                         <p className="text-lg  text-gray-700  hover:text-gray-600 ">Available Slot: {availableSlot}</p>
                     </div>
-                    <button className="btn bg-[#219ebc] hover:bg-[#3c738f] text-white mt-1 w-full">
+                    {/* The button to open modal */}
+                    <button className="btn bg-[#219ebc] hover:bg-[#3c738f] text-white mt-1 w-full" onClick={handleBookNow}>
                         Book Now
                     </button>
+                    {isApplicationOpen && (
+                        <dialog id="my_modal_3" className="modal" open>
+                            <div className="modal-box">
+                                <form method="dialog">
+                                    <button
+                                        className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+                                        onClick={() => setApplicationOpen(false)}
+                                    >
+                                        ✕
+                                    </button>
+                                </form>
+                                <Payment></Payment>
+
+                            </div>
+                        </dialog>
+                    )}
 
 
                 </div>
