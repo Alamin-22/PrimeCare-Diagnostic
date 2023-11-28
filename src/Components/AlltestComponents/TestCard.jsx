@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const TestCard = ({ test }) => {
-    const { image, shortDescription, title, availableSlot, availableDates } = test;
+    const { _id, image, shortDescription, title, availableSlot, availableDates } = test;
     return (
         <div>
             <div className="card card-compact bg-base-100 shadow-xl">
@@ -13,9 +14,9 @@ const TestCard = ({ test }) => {
                     <p className='text-lg text-gray-500 font-medium'>{shortDescription}</p>
                     <h2 className=" text-lg font-medium"> Available Slot: <span className='text-xl text-[rgb(55,113,122)]'>{availableSlot}</span></h2>
                     <h2 className=" text-lg font-medium"> Date:   <span className='text-xl text-[rgb(55,113,122)]'>{availableDates}</span></h2>
-                    <div className="card-actions w-full">
+                    <Link to={`/testDetails/${_id}`} className="card-actions w-full">
                         <button className="btn w-full bg-[#219ebc] hover:bg-[#3c738f] text-white">Details</button>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </div>

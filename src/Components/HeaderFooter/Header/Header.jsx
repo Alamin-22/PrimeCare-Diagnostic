@@ -5,7 +5,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 const Header = () => {
     const { user, logOut } = useAuth();
 
-    const isAdmin = true;
+    const isAdmin = false;
 
 
     const PageLinks = <>

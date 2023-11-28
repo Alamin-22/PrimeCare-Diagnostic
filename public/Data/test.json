@@ -1,13 +1,14 @@
 [
     {
-        "title": "Comprehensive Blood Test",
-        "shortDescription": "A detailed analysis of blood components for a comprehensive health assessment.",
-        "description": "The Comprehensive Blood Test is a vital diagnostic tool that provides a detailed analysis of various blood components. This test covers a wide range of parameters, including complete blood count (CBC), cholesterol levels, glucose levels, and more. It aids in assessing overall health, detecting potential issues, and guiding further medical interventions. Schedule your appointment for this essential test today.",
-        "image": "https://i.ibb.co/1vFQ1g7/blodtest.jpg",
-        "availableDates": "05-12-2023",
-        "time": "09:00 AM - 10:00 AM",
-        "availableSlot": 10,
-        "featured": true
+        "title": "alamin",
+        "shortDescription": "amar ajke mon vala",
+        "description": "vala nai",
+        "image": "https://i.ibb.co/QjHGKjw/user.png",
+        "availableDates": "12/30/2023",
+        "time": "188:00 AM - 10:00 AM",
+        "availableSlot": 2,
+        "featured": false,
+        "price": 22
     },
     {
         "title": "MRI Scan",
@@ -17,7 +18,8 @@
         "availableDates": "02-12-2023",
         "time": "10:30 AM - 11:30 AM",
         "availableSlot": 5,
-        "featured": false
+        "featured": false,
+        "price": 22
     },
     {
         "title": "Electrocardiogram (ECG)",
@@ -27,7 +29,8 @@
         "availableDates": "08-12-2023",
         "time": "08:30 AM - 09:30 AM",
         "availableSlot": 7,
-        "featured": true
+        "featured": true,
+        "price": 22
     },
     {
         "title": "X-ray Imaging",
@@ -37,7 +40,8 @@
         "availableDates": "04-11-2023",
         "time": "09:30 AM - 10:30 AM",
         "availableSlot": 8,
-        "featured": false
+        "featured": false,
+        "price": 22
     },
     {
         "title": "Pap Smear",
@@ -47,7 +51,8 @@
         "availableDates": "06-12-2023",
         "time": "10:00 AM - 11:00 AM",
         "availableSlot": 6,
-        "featured": true
+        "featured": true,
+        "price": 22
     },
     {
         "title": "Cholesterol Test",
@@ -57,7 +62,8 @@
         "availableDates": "13-12-2023",
         "time": "08:00 AM - 09:00 AM",
         "availableSlot": 12,
-        "featured": false
+        "featured": false,
+        "price": 22
     },
     {
         "title": "Allergy Testing",
@@ -67,17 +73,19 @@
         "availableDates": "17-12-2023",
         "time": "09:30 AM - 10:30 AM",
         "availableSlot": 8,
-        "featured": true
+        "featured": true,
+        "price": 22
     },
     {
         "title": "Bone Density Scan",
         "shortDescription": "Assessment of bone strength and risk of fractures.",
         "description": "The Bone Density Scan, also known as DEXA scan, is a specialized test to assess bone strength and density. It is particularly valuable for evaluating the risk of osteoporosis and fractures. Our advanced technology provides accurate and detailed information about bone health. Schedule your Bone Density Scan appointment for a proactive approach to maintaining strong and healthy bones.",
-        "image": "https://i.ibb.co/wpNncx0/haddi.jpg",
-        "availableDates": "20-12-2023",
+        "image": "https://i.ibb.co/9YW1LFm/mentalhealth2.jpg",
+        "availableDates": "11/28/2023",
         "time": "10:00 AM - 11:00 AM",
         "availableSlot": 7,
-        "featured": false
+        "featured": true,
+        "price": 25
     },
     {
         "title": "Thyroid Function Test",
@@ -87,7 +95,8 @@
         "availableDates": "21-12-2023",
         "time": "08:30 AM - 09:30 AM",
         "availableSlot": 6,
-        "featured": true
+        "featured": true,
+        "price": 22
     },
     {
         "title": "Prostate-Specific Antigen (PSA) Test",
@@ -97,7 +106,8 @@
         "availableDates": "28-12-2023",
         "time": "10:30 AM - 11:30 AM",
         "availableSlot": 9,
-        "featured": false
+        "featured": false,
+        "price": 52
     },
     {
         "title": "Gastrointestinal Endoscopy",
@@ -107,7 +117,8 @@
         "availableDates": "05-01-2024",
         "time": "09:00 AM - 10:00 AM",
         "availableSlot": 8,
-        "featured": true
+        "featured": true,
+        "price": 12
     },
     {
         "title": "Colonoscopy",
@@ -117,7 +128,8 @@
         "availableDates": "07-01-2024",
         "time": "08:30 AM - 09:30 AM",
         "availableSlot": 9,
-        "featured": true
+        "featured": true,
+        "price": 25
     },
     {
         "title": "Glucose Tolerance Test",
@@ -127,7 +139,8 @@
         "availableDates": "08-01-2024",
         "time": "09:30 AM - 10:30 AM",
         "availableSlot": 10,
-        "featured": false
+        "featured": false,
+        "price": 15
     },
     {
         "title": "HIV/AIDS Test",
@@ -137,7 +150,8 @@
         "availableDates": "09-01-2024",
         "time": "10:00 AM - 11:00 AM",
         "availableSlot": 11,
-        "featured": true
+        "featured": true,
+        "price": 22
     },
     {
         "title": "Vision Test",
@@ -147,7 +161,8 @@
         "availableDates": "09-12-2023",
         "time": "08:00 AM - 09:00 AM",
         "availableSlot": 12,
-        "featured": false
+        "featured": false,
+        "price": 22
     },
     {
         "title": "Spirometry",
@@ -157,7 +172,8 @@
         "availableDates": "05-12-2023",
         "time": "09:30 AM - 10:30 AM",
         "availableSlot": 8,
-        "featured": true
+        "featured": true,
+        "price": 30
     },
     {
         "title": "Rheumatoid Arthritis Blood Test",
@@ -167,7 +183,8 @@
         "availableDates": "09-12-2023",
         "time": "10:00 AM - 11:00 AM",
         "availableSlot": 7,
-        "featured": false
+        "featured": false,
+        "price": 25
     },
     {
         "title": "Dental Checkup",
@@ -177,7 +194,8 @@
         "availableDates": "29-11-2023",
         "time": "08:30 AM - 09:30 AM",
         "availableSlot": 9,
-        "featured": true
+        "featured": true,
+        "price": 22
     },
     {
         "title": "Genetic Testing",
@@ -187,6 +205,7 @@
         "availableDates": "25-12-2023",
         "time": "09:00 AM - 10:00 AM",
         "availableSlot": 10,
-        "featured": false
+        "featured": false,
+        "price": 22
     }
 ]
