@@ -190,7 +190,7 @@ const UpdateTest = () => {
 };
 
 UpdateTest.propTypes = {
-    test: PropTypes.object.isRequired,
+    test: PropTypes.object,
 };
 
 

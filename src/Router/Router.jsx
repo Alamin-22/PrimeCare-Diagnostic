@@ -16,11 +16,11 @@ import TestResult from "../DashboardPage/Test/TestResult";
 import AddTest from "../DashboardPage/AddTest/AddTest";
 import AdminAllTests from "../DashboardPage/AdminAllTests/AdminAllTests";
 import AddBanner from "../DashboardPage/AdminBanner/AddBanner";
-import UpdateBanner from "../DashboardPage/AdminBanner/UpdateBanner";
 import AllUsers from "../DashboardPage/AllUsers/AllUsers";
 import Reservation from "../DashboardPage/Reservation/Reservation";
 import AdminProfile from "../DashboardPage/AdminProfile/AdminProfile";
 import UpdateTest from "../DashboardPage/AdminAllTests/UpdateTest";
+import ManageBanner from "../DashboardPage/AdminBanner/ManageBanner";
 
 const router = createBrowserRouter([
     {
@@ -98,8 +98,8 @@ const router = createBrowserRouter([
                 element: <AddBanner></AddBanner>,
             },
             {
-                path: "updateBanner",
-                element: <UpdateBanner></UpdateBanner>
+                path: "manageBanner",
+                element: <ManageBanner></ManageBanner>
             },
             {
                 path: "observeAllUsers",

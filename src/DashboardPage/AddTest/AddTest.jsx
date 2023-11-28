@@ -75,7 +75,7 @@ const AddTest = () => {
                                     <span className="label-text">Title of the Test</span>
                                 </label>
                                 <label className="input-group">
-                                    <input type="text" name="title" placeholder="Title of the Test" className="input input-bordered w-full" required />
+                                    <input type="text" name="title" placeholder="Title of the Test" className="input input-bordered input-accent w-full" required />
                                 </label>
                             </div>
                             <div className="form-control md:w-1/2">
@@ -83,9 +83,9 @@ const AddTest = () => {
                                     <span className="label-text">Featured</span>
                                 </label>
                                 <label className="input-group">
-                                    <select name="featured_bol" className="select select-bordered w-full" required>
-                                        <option value="true">True</option>
+                                    <select name="featured_bol" className="select select-accent select-bordered w-full" required>
                                         <option value="false">False</option>
+                                        <option value="true">True</option>
                                     </select>
                                 </label>
                             </div>
@@ -107,7 +107,7 @@ const AddTest = () => {
                                     <span className="label-text">Test Date</span>
                                 </label>
                                 <label className="input-group">
-                                    <DatePicker name="testDate" className="input cursor-pointer input-bordered w-[95%] md:w-[364px] lg:w-[428px]"
+                                    <DatePicker name="testDate" className="input input-accent cursor-pointer input-bordered w-[95%] md:w-[364px] lg:w-[428px]"
                                         placeholderText="MM/DD/YYYY" selected={date} onChange={(date) => setDate(date)}
                                     />
                                 </label>
@@ -130,7 +130,7 @@ const AddTest = () => {
                                     <span className="label-text">Price For Test</span>
                                 </label>
                                 <label className="input-group">
-                                    <input className="input input-bordered w-full" required
+                                    <input className="input-accent input input-bordered w-full" required
                                         type="number"
                                         name="price"
                                         placeholder="150"
@@ -142,7 +142,7 @@ const AddTest = () => {
                                     <span className="label-text">Available Slot</span>
                                 </label>
                                 <label className="input-group">
-                                    <input className="input input-bordered w-full" required
+                                    <input className="input input-accent input-bordered w-full" required
                                         type="number"
                                         name="availableSlot"
                                     />

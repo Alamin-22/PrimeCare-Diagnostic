@@ -40,7 +40,7 @@ const Header = () => {
                     } to={"/dashboard/addBanner"}>Add Banner</NavLink></li>
                     <li><NavLink className={({ isActive, isPending }) =>
                         isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
-                    } to={"/dashboard/updateBanner"}>updateBanner</NavLink></li>
+                    } to={"/dashboard/manageBanner"}>Manage Banner</NavLink></li>
                     <li><NavLink className={({ isActive, isPending }) =>
                         isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
                     } to={"/dashboard/observeAllUsers"}>Observe Users</NavLink></li>

@@ -82,7 +82,7 @@ const AdminAllTests = () => {
 
                         {
                             AllTest?.map((test, idx) => <tr key={test._id}>
-                                <th>{test._id}</th>
+                                <th></th>
                                 <th>{idx + 1}</th>
                                 <td>
                                     {test?.title}
