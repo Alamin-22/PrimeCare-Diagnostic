@@ -61,6 +61,7 @@ const AuthProvider = ({ children }) => {
                     .then(res => {
                         if (res.data.token) {
                             localStorage.setItem("AccessToken", res.data.token);
+                            setLoading(false);
                         }
                     })
                     .catch(error => {
@@ -69,8 +70,9 @@ const AuthProvider = ({ children }) => {
             } else {
                 // remove token if the token is stored in the cline site or server site or http only cookie. 
                 localStorage.removeItem("AccessToken");
+                setLoading(false);
             }
-            setLoading(false);
+            
         });
         return () => {
             unSubscribe();

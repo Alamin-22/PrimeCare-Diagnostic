@@ -6,13 +6,17 @@ import Header from "../../../Components/HeaderFooter/Header/Header";
 import useAuth from "../../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import AxiosPublic from "../../../Hooks/AxiosPublic";
-
-
 const Login = () => {
     const { GoogleSingIn, Login } = useAuth();
     const axiosPublic = AxiosPublic();
     const navigate = useNavigate();
     const location = useLocation();
+
+
+
+
+
+
     const handleLogin = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
@@ -27,7 +31,10 @@ const Login = () => {
                 const user = res.user;
                 console.log(user);
                 toast.success(`User Successfully Logged in`)
+
                 navigate(location?.state ? location.state : '/dashboard')
+
+
             })
             .catch(error => {
                 console.log(error);

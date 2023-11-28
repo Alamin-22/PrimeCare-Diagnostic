@@ -22,6 +22,7 @@ import AdminProfile from "../DashboardPage/AdminProfile/AdminProfile";
 import UpdateTest from "../DashboardPage/AdminAllTests/UpdateTest";
 import ManageBanner from "../DashboardPage/AdminBanner/ManageBanner";
 import TestDetails from "../Pages/AllTest/TestDetails";
+import AdminRoute from "../Private/AdminRoute";
 
 const router = createBrowserRouter([
     {
@@ -67,15 +68,11 @@ const router = createBrowserRouter([
     },
     {
         path: "dashBoard",
-        element: <DashBoardLayout></DashBoardLayout>,
+        element: <PrivateRoute> <DashBoardLayout></DashBoardLayout></PrivateRoute>,
         children: [
             {
-                path: "profile",
+                path: "UserProfile",
                 element: <PrivateRoute><Profile></Profile></PrivateRoute>,
-            },
-            {
-                path: "AdminProfile",
-                element: <AdminProfile></AdminProfile>
             },
             {
                 path: "ComingAppointments",
@@ -86,34 +83,38 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><TestResult></TestResult></PrivateRoute>,
             },
             {
+                path: "AdminProfile",
+                element: <AdminRoute><AdminProfile></AdminProfile></AdminRoute>,
+            },
+            {
                 path: "addTest",
-                element: <AddTest></AddTest>,
+                element: <AdminRoute><AddTest></AddTest></AdminRoute>,
             },
             {
                 path: "UpdateTest/:id",
-                element: <UpdateTest></UpdateTest>,
+                element: <AdminRoute><UpdateTest></UpdateTest></AdminRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/test/${params.id}`)
             }
             ,
             {
                 path: "observeAllTest",
-                element: <AdminAllTests></AdminAllTests>,
+                element: <AdminRoute><AdminAllTests></AdminAllTests></AdminRoute>,
             },
             {
                 path: "addBanner",
-                element: <AddBanner></AddBanner>,
+                element: <AdminRoute><AddBanner></AddBanner></AdminRoute>,
             },
             {
                 path: "manageBanner",
-                element: <ManageBanner></ManageBanner>
+                element: <AdminRoute><ManageBanner></ManageBanner></AdminRoute>,
             },
             {
                 path: "observeAllUsers",
-                element: <AllUsers></AllUsers>,
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>,
             },
             {
                 path: "reservation",
-                element: <Reservation></Reservation>
+                element: <AdminRoute><Reservation></Reservation></AdminRoute>,
             }
 
         ]

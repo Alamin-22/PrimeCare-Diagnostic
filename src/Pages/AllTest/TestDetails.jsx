@@ -5,7 +5,7 @@ import Payment from "./Payments/Payment";
 
 const TestDetails = () => {
     const [specificTest] = useLoaderData();
-    const { title, featured, shortDescription, description, image, time, price, availableSlot, availableDates, } = specificTest;
+    const { _id, title, featured, shortDescription, discountRate, description, image, time, price, availableSlot, couponCode, availableDates, } = specificTest;
 
     // const [slot, setSlot] = useState(availableSlot - 1);
     const [isApplicationOpen, setApplicationOpen] = useState(false);
@@ -77,7 +77,7 @@ const TestDetails = () => {
                                         ✕
                                     </button>
                                 </form>
-                                <Payment></Payment>
+                                <Payment discountRate={discountRate} couponCode={couponCode} _id={_id} price={price}></Payment>
 
                             </div>
                         </dialog>

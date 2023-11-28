@@ -1,11 +1,15 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import useAdmin from "../../../Hooks/useAdmin";
+
 
 const Header = () => {
     const { user, logOut } = useAuth();
+    const navigate = useNavigate();
+    const [ isAdmin] = useAdmin();
 
-    const isAdmin = false;
+
 
 
     const PageLinks = <>
@@ -96,7 +100,9 @@ const Header = () => {
 
     const handleLogout = () => {
         logOut()
-            .then()
+            .then(() => {
+                navigate("/")
+            })
             .catch()
     }
     return (
@@ -138,10 +144,17 @@ const Header = () => {
                                         </label>
                                         <div tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                                             <p className="px-4 py-2 hover:bg-base-300 rounded-lg"> {user.displayName}</p>
+                                            {
+                                                isAdmin ?
+                                                    <NavLink to="/dashboard/AdminProfile" className="px-4 py-2 hover:bg-base-300 rounded-lg">
+                                                        Admin DashBoard
+                                                    </NavLink>
+                                                    :
+                                                    <NavLink to="/dashboard/UserProfile" className="px-4 py-2 hover:bg-base-300 rounded-lg">
+                                                        User DashBoard
+                                                    </NavLink>
+                                            }
 
-                                            <NavLink to="/dashboard" className="px-4 py-2 hover:bg-base-300 rounded-lg">
-                                                DashBoard
-                                            </NavLink>
 
 
                                             <div onClick={handleLogout}

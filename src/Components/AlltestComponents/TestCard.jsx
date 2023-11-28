@@ -5,7 +5,7 @@ const TestCard = ({ test }) => {
     const { _id, image, shortDescription, title, availableSlot, availableDates } = test;
     return (
         <div>
-            <div className="card card-compact bg-base-100 shadow-xl">
+            <div className="card h-full card-compact bg-base-100 shadow-xl">
                 <figure>
                     <img src={image} alt="Shoes" />
                 </figure>
