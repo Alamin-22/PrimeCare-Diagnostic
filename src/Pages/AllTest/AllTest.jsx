@@ -3,12 +3,14 @@ import AxiosPublic from "../../Hooks/AxiosPublic";
 import TestCard from "../../Components/AlltestComponents/TestCard";
 import { useState } from "react";
 import "./pagination.css"
+import { FaSearch } from "react-icons/fa";
 const AllTest = () => {
 
     const axiosPublic = AxiosPublic();
     const [currentPage, setCurrentPage] = useState(0);
     const [itemPerPage, setItemPerPage] = useState(6);
-
+    const [searchItems, setSearchItems] = useState('');
+    const [filteredTests, setFilteredTests] = useState([]);
     const { data: AllTest = [], refetch } = useQuery({
         queryKey: ["AllTest", currentPage, itemPerPage],
         queryFn: async () => {
@@ -20,6 +22,16 @@ const AllTest = () => {
 
     const handleSearch = (e) => {
         e.preventDefault();
+        const filtered = AllTest.filter(test =>
+            test.availableDates &&
+            test.availableDates.includes(searchItems) &&
+            parseDate(test.availableDates) >= new Date().setHours(0, 0, 0, 0)
+        );
+        setFilteredTests(filtered);
+    };
+    const parseDate = (dateString) => {
+        const [day, month, year] = dateString.split('-').map(Number);
+        return new Date(year, month - 1, day);
     };
 
     // pagination
@@ -60,8 +72,19 @@ const AllTest = () => {
                 <h1 className="text-3xl text-center my-5 font-semibold text-[#3cabc7] ">All Featuring Test </h1>
 
                 <div>
-                    <form onChange={handleSearch} >
-
+                    <form onChange={handleSearch} className="my-5">
+                        <div className="flex md:w-full flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:space-x-0 md:flex-row md:justify-center">
+                            <input
+                                type="text"
+                                className="md:w-3/4 input input-accent"
+                                placeholder="Search By Upcoming Dates Like DD-MM-YYY"
+                                value={searchItems}
+                                onChange={(e) => setSearchItems(e.target.value)}
+                            />
+                            <button type="submit" className="btn bg-[#219ebc] hover:bg-[#3c738f] text-white ">
+                                <FaSearch />
+                            </button>
+                        </div>
                     </form>
 
                 </div>
@@ -69,8 +92,9 @@ const AllTest = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-5 gap-7">
-                {
-                    AllTest.map(test => <TestCard key={test._id} test={test}></TestCard>)
+                {filteredTests.length > 0
+                    ? filteredTests.map((test) => <TestCard key={test._id} test={test}></TestCard>)
+                    : AllTest.map((test) => <TestCard key={test._id} test={test}></TestCard>)
                 }
             </div>
             <div className="pagination space-x-2 my-5">
