@@ -26,7 +26,7 @@ const ManageBanner = () => {
                 console.log(res.data);
                 if (res.data.modifiedCount > 0) {
                     refetch();
-                    Swal.fire("Activated", `${banner?.Name} is now Active`, "success");
+                    Swal.fire("Activated", `Banner is now Active`, "success");
                 }
             })
     }
@@ -37,7 +37,7 @@ const ManageBanner = () => {
                 console.log(res.data);
                 if (res.data.modifiedCount > 0) {
                     refetch();
-                    Swal.fire("Deactivated", `${banner?.Name} is now DeActivated`, "success");
+                    Swal.fire("Deactivated", `Banner is now DeActivated`, "success");
                 }
             })
     }

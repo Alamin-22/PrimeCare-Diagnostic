@@ -1,5 +1,6 @@
+import EditProfile from "../../Components/EditProfile/EditProfile";
 import useUserData from "../../Hooks/useUserData";
-
+import { FaUserEdit } from "react-icons/fa";
 const AdminProfile = () => {
     const [SingleUser] = useUserData();
 
@@ -26,8 +27,18 @@ const AdminProfile = () => {
     return (
         <div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 p-10 gap-10">
-                <div className="lg:col-span-2 mx-auto md:mx-0 text-center p-10 md:text-left bg-gray-200 rounded-lg  ">
-
+                <div className="relative  lg:col-span-2 mx-auto md:mx-0 text-center p-10 md:text-left bg-gray-200 rounded-lg  ">
+                    <button onClick={() => document.getElementById('my_modal_4').showModal()} className=" absolute top-0 right-5 mt-5  btn bg-[#219ebc] hover:bg-[#3c738f] text-white  btn-sm "> <FaUserEdit className="text-lg" />Edit</button>
+                    <dialog id="my_modal_4" className="modal">
+                        <div className="modal-box">
+                            <EditProfile userData={userData}></EditProfile>
+                            <div className="modal-action">
+                                <form method="dialog">
+                                    <button className="btn">Close</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
                     <img className="w-48 h-48 rounded-full"
                         src={photo} alt="Admin photo" />
                     <p className="mt-3 text-sm">Welcome Back</p>
@@ -63,6 +74,10 @@ const AdminProfile = () => {
                                     </div>
                                     <div>
                                         <p className="mt-4  font-medium">Upazila:</p>
+                                        <p className="text-lg ">{Upazila}</p>
+                                    </div>
+                                    <div>
+                                        <p className="mt-4  font-medium">Phone  :</p>
                                         <p className="text-lg ">{Upazila}</p>
                                     </div>
                                 </div>
