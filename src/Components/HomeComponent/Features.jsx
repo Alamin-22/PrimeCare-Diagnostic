@@ -3,7 +3,7 @@ import docAnimation from "../../../public/Animation/Animation - 1700945746684.js
 const Features = () => {
     return (
         <div>
-            <div>
+            <div className="px-5">
                 <h1 className="text-center text-4xl my-5 text-gray-800  font-semibold">Comprehensive Healthcare Solutions</h1>
                 <p className="max-w-3xl text-center text-gray-600 font-medium mx-auto">Your journey to well-being starts here, with a diverse range of specialized services. Our commitment is to provide personalized and exceptional care for every aspect of your health</p>
             </div>
