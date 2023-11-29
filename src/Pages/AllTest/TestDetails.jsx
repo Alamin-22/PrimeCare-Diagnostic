@@ -77,7 +77,7 @@ const TestDetails = () => {
                                         ✕
                                     </button>
                                 </form>
-                                <Payment discountRate={discountRate} couponCode={couponCode} _id={_id} price={price}></Payment>
+                                <Payment specificTest={specificTest} discountRate={discountRate} couponCode={couponCode} _id={_id} price={price}></Payment>
 
                             </div>
                         </dialog>

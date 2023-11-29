@@ -5,17 +5,19 @@ import PropTypes from 'prop-types';
 import useAuth from "../../../Hooks/useAuth";
 import moment from 'moment';
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 
 
 
-const CheckOutForm = ({ price, _id }) => {
-
+const CheckOutForm = ({ specificTest }) => {
+    // eslint-disable-next-line no-unused-vars
+    const { _id, title, featured, shortDescription, discountRate, description, image, time, price, availableSlot, couponCode, availableDates, } = specificTest;
+    const navigate = useNavigate();
     const stripe = useStripe();
     const elements = useElements();
     const [error, setError] = useState("");
     const [clientSecret, setClientSecret] = useState("");
-    const [transitionId, setTransitionId] = useState("");
     const axiosSecure = AxiosSecure();
     const { user } = useAuth();
     const currentDate = moment();
@@ -82,24 +84,28 @@ const CheckOutForm = ({ price, _id }) => {
 
             if (paymentIntent.status === "succeeded") {
                 console.log("TransitionId", paymentIntent.id);
-                setTransitionId(paymentIntent.id)
+
             }
             // now saving the payment in the database
+
             const payment = {
                 email: user.email,
                 price: price,
-                transactionId: paymentIntent.id,
-                date: formattedDate,
-                TestId: _id,
+                trxId: paymentIntent.id,
+                PaidDate: formattedDate,
+                title: title,
+                image: image,
+                time: time,
+                availableDates: availableDates,
                 status: 'pending'
             }
-
+            console.log(payment)
             const res = await axiosSecure.post('/payments', payment);
             console.log('payment saved', res.data);
             // refetch();
             if (res.data?.insertedId) {
-                toast.success('payment Successfully!')
-                // navigate('/dashboard/paymentHistory')
+                toast.success('Payment and Booking Complete')
+                navigate('/dashboard/ComingAppointments')
             }
 
         }
@@ -141,7 +147,7 @@ const CheckOutForm = ({ price, _id }) => {
     );
 };
 CheckOutForm.propTypes = {
-    price: PropTypes.number,
-    _id: PropTypes.string,
+    specificTest: PropTypes.object,
+
 };
 export default CheckOutForm;

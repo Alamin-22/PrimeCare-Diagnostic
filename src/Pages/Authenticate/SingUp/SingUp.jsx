@@ -71,7 +71,7 @@ const SignUp = () => {
                                         if (res.data.insertedId) {
                                             toast.success('User Successfully Created!');
 
-                                            navigate(location?.state ? location.state : '/dashboard');
+                                            navigate(location?.state ? location.state : '/dashboard/AdminProfile');
 
                                         }
                                     })

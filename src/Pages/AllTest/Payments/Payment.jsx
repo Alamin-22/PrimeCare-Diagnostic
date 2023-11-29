@@ -11,10 +11,11 @@ import { useState } from 'react';
 
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Getway_Test);
 
-const Payment = ({ price, _id, couponCode, discountRate }) => {
+const Payment = ({ specificTest }) => {
+
+    const { discountRate, price, couponCode, } = specificTest;
 
     const [discountedPrice, setDiscountedPrice] = useState(price);
-
     const PromoValidation = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
@@ -40,17 +41,15 @@ const Payment = ({ price, _id, couponCode, discountRate }) => {
                     <p className='text-lg text-emerald-500'>Price: ${discountedPrice}</p>
                 </form>
                 <Elements stripe={stripePromise}>
-                    <CheckOutForm _id={_id} price={discountedPrice}></CheckOutForm>
+                    <CheckOutForm specificTest={specificTest}></CheckOutForm>
                 </Elements>
             </div>
         </div>
     );
 };
 Payment.propTypes = {
-    price: PropTypes.number,
-    discountRate: PropTypes.number,
-    _id: PropTypes.string,
-    couponCode: PropTypes.string,
+    specificTest: PropTypes.object,
+
 };
 export default Payment;
 

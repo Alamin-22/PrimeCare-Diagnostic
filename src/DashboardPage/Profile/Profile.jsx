@@ -21,7 +21,7 @@ const Profile = () => {
         );
     }
 
-    const { Name, Status, District, Upazila, bloodGroup, email, photo, role, _id, phone } = userData;
+    const { Name, Status, District, Upazila, bloodGroup, email, photo,  _id, phone } = userData;
 
     return (
         <div>
