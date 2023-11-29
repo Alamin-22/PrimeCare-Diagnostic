@@ -1,26 +1,3 @@
-// import useUserData from "../../Hooks/useUserData";
-
-// const AdminProfile = () => {
-
-//     const [SingleUser, isPending] = useUserData();
-//     console.log(SingleUser[0]);
-
-//     const { Name, Status, Upazila, bloodGroup, email, photo, role, _id, } = SingleUser[0]
-//     // console.log(Name)
-
-
-//     return (
-//         <div>
-//             <h1 className=" text-5xl text-center">this is the container of admin profiles</h1>
-
-//         </div>
-//     );
-// };
-
-// export default AdminProfile;
-
-
-
 import useUserData from "../../Hooks/useUserData";
 
 const AdminProfile = () => {

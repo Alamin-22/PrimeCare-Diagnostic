@@ -6,11 +6,13 @@ import Header from "../../../Components/HeaderFooter/Header/Header";
 import useAuth from "../../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import AxiosPublic from "../../../Hooks/AxiosPublic";
+import useAdmin from "../../../Hooks/useAdmin";
 const Login = () => {
     const { GoogleSingIn, Login } = useAuth();
     const axiosPublic = AxiosPublic();
     const navigate = useNavigate();
     const location = useLocation();
+    const [isAdmin] = useAdmin();
 
 
 
@@ -31,9 +33,11 @@ const Login = () => {
                 const user = res.user;
                 console.log(user);
                 toast.success(`User Successfully Logged in`)
-
-                navigate(location?.state ? location.state : '/dashboard')
-
+                if (typeof isAdmin === 'undefined') {
+                    navigate(location?.state ? location.state : '/dashboard/AdminProfile');
+                } else {
+                    navigate(location?.state ? location.state : '/dashboard/UserProfile');
+                }
 
             })
             .catch(error => {
@@ -45,6 +49,10 @@ const Login = () => {
 
 
     }
+
+
+
+
 
     const handleSocialLogin = (media) => {
         media()
@@ -61,10 +69,18 @@ const Login = () => {
                     .then(res => {
                         if (res.data.insertedId) {
                             toast.success('User Successfully Created!');
-                            navigate(location?.state ? location.state : '/dashboard')
+                            if (typeof isAdmin === 'undefined') {
+                                navigate(location?.state ? location.state : '/dashboard/AdminProfile');
+                            } else {
+                                navigate(location?.state ? location.state : '/dashboard/UserProfile');
+                            }
                         }
-                        toast.success('User Successfully Login!');
-                        navigate(location?.state ? location.state : '/dashboard')
+                        toast.success(`User Successfully Logged in`)
+                        if (typeof isAdmin === 'undefined') {
+                            navigate(location?.state ? location.state : '/dashboard/AdminProfile');
+                        } else {
+                            navigate(location?.state ? location.state : '/dashboard/UserProfile');
+                        }
 
                     })
                     .catch(error => {
