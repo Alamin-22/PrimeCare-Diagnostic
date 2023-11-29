@@ -22,7 +22,7 @@ const AdminProfile = () => {
     }
 
     // Destructure data
-    const { Name, Status, District, Upazila, bloodGroup, email, photo, role, _id } = userData;
+    const { Name, Status, District, Upazila, bloodGroup, email, photo, role, _id, phone } = userData;
 
     return (
         <div>
@@ -43,7 +43,7 @@ const AdminProfile = () => {
                         src={photo} alt="Admin photo" />
                     <p className="mt-3 text-sm">Welcome Back</p>
                     <h3 className="font-medium text-xl mt-4">{Name}</h3>
-                    <p className="mt-3 font-semibold">Roll: <span className="uppercase">{role}</span> </p>
+                    <p className="mt-3 font-semibold">Roll: <span className="uppercase text-red-600">{role}</span> </p>
                     <p className="mt-3 font-semibold">Status: <span className="uppercase">{Status}</span> </p>
 
                 </div>
@@ -64,21 +64,21 @@ const AdminProfile = () => {
                                     </div>
                                     <div>
                                         <p className="mt-4  font-medium">Blood Group:</p>
-                                        <p className="text-lg text-red-500">{bloodGroup}</p>
+                                        <p className="text-lg text-red-500">{bloodGroup ? bloodGroup : "Add Blood Group"}</p>
                                     </div>
                                 </div>
                                 <div>
                                     <div>
                                         <p className="mt-4  font-medium">District:</p>
-                                        <p className="text-lg ">{District}</p>
+                                        <p className="text-lg ">{District ? District : "Add District"}</p>
                                     </div>
                                     <div>
                                         <p className="mt-4  font-medium">Upazila:</p>
-                                        <p className="text-lg ">{Upazila}</p>
+                                        <p className="text-lg ">{Upazila ? Upazila : "Add Upazila"}</p>
                                     </div>
                                     <div>
                                         <p className="mt-4  font-medium">Phone  :</p>
-                                        <p className="text-lg ">{Upazila}</p>
+                                        <p className="text-lg ">{phone ? phone : "please Add Number"}</p>
                                     </div>
                                 </div>
                             </div>

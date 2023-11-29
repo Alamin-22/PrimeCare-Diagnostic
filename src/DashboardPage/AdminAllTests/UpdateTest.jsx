@@ -124,9 +124,8 @@ const UpdateTest = () => {
                             </div>
                         </div>
                         {/* form time row */}
-                        <div className=" justify-between mb-8">
-
-                            <div className="form-control md:ml-4">
+                        <div className=" md:flex justify-between mb-8">
+                            <div className="form-control ">
                                 <label className="label">
                                     <span className="label-text">Price For Test</span>
                                 </label>
@@ -139,7 +138,7 @@ const UpdateTest = () => {
                                     />
                                 </label>
                             </div>
-                            <div className="form-control md:ml-4">
+                            <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Available Slot</span>
                                 </label>
