@@ -68,7 +68,7 @@ const Reservation = () => {
 
 
     return (
-        <div>
+        <div className="h-screen">
             {
                 reservationPending ?
                     <>
@@ -81,7 +81,7 @@ const Reservation = () => {
                     </>
                     :
                     <>
-                        <div className="overflow-x-auto h-[80vh]">
+                        <div className="overflow-x-auto ">
                             <table className="table table-zebra">
                                 {/* head */}
                                 <thead className="bg-slate-200 text-gray-700">

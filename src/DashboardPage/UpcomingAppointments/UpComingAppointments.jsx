@@ -21,7 +21,7 @@ const UpComingAppointments = () => {
       if (result.isConfirmed) {
         const cancelBooking = "cancel";
         axiosSecure
-          .patch(`/payments/${test._id}`, { cancelBooking })
+          .put(`/payments/${test._id}`, { cancelBooking })
           .then((res) => {
             console.log(res.data);
             if (res.data.modifiedCount > 0) {
@@ -53,7 +53,7 @@ const UpComingAppointments = () => {
         </>
       ) : (
         <>
-          <div>
+          <div className="h-screen">
             {TestDetails.length === 0 ? (
               <>
                 <p className="flex justify-center items-center text-center h-screen text-5xl">
@@ -62,7 +62,7 @@ const UpComingAppointments = () => {
               </>
             ) : (
               <>
-                <div className="overflow-x-auto h-[80vh]">
+                <div className="overflow-x-auto ">
                   <table className="table table-zebra">
                     {/* head */}
                     <thead className="bg-slate-200 text-sm text-gray-700">
@@ -109,9 +109,16 @@ const UpComingAppointments = () => {
                               />
                             ) : (
                               <>
-                                <p className="badge badge-outline badge-error">
-                                  Canceled
-                                </p>
+                                {
+                                  test.status === "cancel" ?
+                                    <p className="badge badge-outline badge-error">
+                                      Canceled
+                                    </p>
+                                    :
+                                    <p className="badge badge-outline badge-success">
+                                      Delivered
+                                    </p>
+                                }
                               </>
                             )}
                           </td>
