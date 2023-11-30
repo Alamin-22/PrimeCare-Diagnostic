@@ -25,12 +25,65 @@ const AllUsers = () => {
       }
     });
   };
-  const handleBlock = (user) => {
-    axiosSecure.patch(`/users/${user._id}`).then((res) => {
-      console.log(res.data);
-      if (res.data.modifiedCount > 0) {
-        refetch();
-        Swal.fire("Congratulations", `${user?.Name} is now Admin!!`, "success");
+  const handleStatus = (user) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: `You want to block ${user?.Name}`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Block user!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const block = "blocked";
+        axiosSecure
+          .patch(`/users/${user._id}`, { block })
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.modifiedCount > 0) {
+              Swal.fire({
+                title: "Blocked!",
+                text: "User has been Blocked.",
+                icon: "success",
+              });
+              refetch();
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    });
+  };
+  const handleStatusActive = (user) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: `You want to Active ${user?.Name}`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes do it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const block = "Active";
+        axiosSecure
+          .patch(`/users/${user._id}`, { block })
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.modifiedCount > 0) {
+              Swal.fire({
+                title: "Activated!",
+                text: "User has been Activated.",
+                icon: "success",
+              });
+              refetch();
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       }
     });
   };
@@ -73,6 +126,7 @@ const AllUsers = () => {
           {/* head */}
           <thead className="bg-slate-200 text-gray-700">
             <tr>
+              <th></th>
               <th>No</th>
               <th>Photo</th>
               <th>Name</th>
@@ -86,17 +140,23 @@ const AllUsers = () => {
           <tbody>
             {users?.map((user, idx) => (
               <tr key={user._id}>
+                <td></td>
                 <th>{idx + 1}</th>
                 <td>
-                  <div className="avatar">
-                    <div className="mask mask-squircle w-12 h-12">
-                      {user?.photo ? (
-                        <img src={user?.photo} />
-                      ) : (
-                        <img src={"https://i.ibb.co/QjHGKjw/user.png"} />
-                      )}
-                    </div>
-                  </div>
+                  {
+                    user?.Status === "Active" ?
+                      <div className="avatar online">
+                        <div className="w-24 h-24 rounded-full">
+                          {<img src={user?.photo} />}
+                        </div>
+                      </div>
+                      :
+                      <div className="avatar offline">
+                        <div className="w-24 h-24 rounded-full">
+                          {<img src={user?.photo} />}
+                        </div>
+                      </div>
+                  }
                 </td>
                 <td>{user?.Name}</td>
                 <td className="text-blue-500 hover:underline cursor-pointer">
@@ -125,14 +185,15 @@ const AllUsers = () => {
                 </td>
                 <td>
                   {user?.Status === "Active" ? (
-                    "Active"
-                  ) : (
-                    <button
-                      onClick={() => handleBlock(user)}
-                      className="btn btn-outline btn-success btn-sm "
-                    >
+                    <button onClick={() => handleStatus(user)} className="btn btn-outline btn-error btn-sm " >
                       Block
                     </button>
+                  ) : (
+                    <>
+                      <button onClick={() => handleStatusActive(user)} className="btn btn-outline btn-success btn-sm ">
+                        Active
+                      </button>
+                    </>
                   )}
                 </td>
                 <td>

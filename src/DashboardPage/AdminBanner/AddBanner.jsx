@@ -57,7 +57,7 @@ const AddBanner = () => {
     }
     return (
         <div>
-            <div className="max-w-4xl mx-auto shadow-2xl">
+            <div className="max-w-4xl  mx-auto shadow-2xl">
                 <form onSubmit={HandleAddBanner} className=" bg-[#a6faf02d] " >
                     <div className="p-3 ">
                         <h1 className="text-3xl text-center font-bold">Banner Form</h1>
