@@ -22,9 +22,31 @@ const SignUp = () => {
     const Status = "Active";
     const { CreateUser, UpdateProfile } = useAuth();
     const navigate = useNavigate();
+    const [Districts, setDistricts] = useState([]);
 
 
-    const Districts = useLoaderData()
+    // const Districts = useLoaderData()
+
+    useEffect(() => {
+        axiosPublic.get("/districts")
+            .then(res => {
+                setDistricts(res.data)
+                // console.log(res.data)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }, [axiosPublic])
+    useEffect(() => {
+        axiosPublic.get("/upazila")
+            .then(res => {
+                setDistricts(res.data)
+                // console.log(res.data)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }, [axiosPublic])
 
     const handleSignUp = (e) => {
         e.preventDefault();
@@ -94,7 +116,7 @@ const SignUp = () => {
 
 
     useEffect(() => {
-        fetch("/public/Data/UpaZila.json")
+        fetch("/Data/UpaZila.json")
             .then(res => res.json())
             .then(data => {
                 setUpzila(data)

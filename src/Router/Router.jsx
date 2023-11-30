@@ -49,7 +49,7 @@ const router = createBrowserRouter([
             {
                 path: "/testDetails/:id",
                 element: <PrivateRoute><TestDetails /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/test/${params.id}`)
+                loader: ({ params }) => fetch(`https://b8a12-server-side-alamin-22.vercel.app/test/${params.id}`)
             },
             {
                 path: "/ContactUs",
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
     {
         path: "/singUp",
         element: <SingUp></SingUp>,
-        loader: () => fetch("/public/Data/District.json")
+        loader: () => fetch("/Data/District.json")
     },
     {
         path: "dashBoard",
@@ -93,7 +93,7 @@ const router = createBrowserRouter([
             {
                 path: "UpdateTest/:id",
                 element: <AdminRoute><UpdateTest></UpdateTest></AdminRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/test/${params.id}`)
+                loader: ({ params }) => fetch(`https://b8a12-server-side-alamin-22.vercel.app/test/${params.id}`)
             }
             ,
             {
