@@ -1,24 +1,38 @@
+
 import { useQuery } from "@tanstack/react-query";
 import AxiosSecure from "../../Hooks/AxiosSecure";
 import { MdDeleteForever } from "react-icons/md";
 import Swal from "sweetalert2";
 import { SlDocs } from "react-icons/sl";
 import SubmitDocs from "./SubmitDocs";
+
+import { FaSearch } from "react-icons/fa";
+import { useState } from "react";
 const Reservation = () => {
 
     const axiosSecure = AxiosSecure();
+    const [search, setSearch] = useState("");
 
 
     const { data: reservations = [], isPending: reservationPending, refetch } = useQuery({
         queryKey: ["reservations",],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/payments`);
+            const res = await axiosSecure.get(`/payments?search=${search}`);
             return res.data;
         }
     });
 
-
-
+    
+    
+    const handleSearch = async (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        setSearch(email)
+        // eslint-disable-next-line no-unused-vars
+        const res = await axiosSecure.get(`/payments?search=${email}`);
+        refetch();
+    };
+    
     const handleCancelBooking = (reserved) => {
         Swal.fire({
             title: "Are you sure?",
@@ -66,9 +80,8 @@ const Reservation = () => {
 
 
 
-
     return (
-        <div className="h-screen">
+        <div className="">
             {
                 reservationPending ?
                     <>
@@ -82,8 +95,26 @@ const Reservation = () => {
                     :
                     <>
                         <div className="overflow-x-auto ">
+                            <div>
+                                <div>
+                                    <form onSubmit={handleSearch} className="my-5">
+                                        <div className="flex md:w-full flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:space-x-0 md:flex-row md:justify-center">
+                                            <input
+                                                type="text"
+                                                className="md:w-3/4 input input-accent"
+                                                placeholder="Search user Email"
+                                                name="email"
+                                            />
+                                            <button type="submit" className="btn bg-[#219ebc] hover:bg-[#3c738f] text-white ">
+                                                <FaSearch />
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                </div>
+
+                            </div>
                             <table className="table table-zebra">
-                                {/* head */}
                                 <thead className="bg-slate-200 text-gray-700">
                                     <tr>
                                         <th></th>
@@ -172,3 +203,6 @@ const Reservation = () => {
 };
 
 export default Reservation;
+
+
+
