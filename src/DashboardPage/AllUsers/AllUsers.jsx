@@ -1,20 +1,13 @@
-import { useQuery } from "@tanstack/react-query";
 import AxiosSecure from "../../Hooks/AxiosSecure";
 import { MdDeleteForever } from "react-icons/md";
 import { FaInfoCircle } from "react-icons/fa";
 import Swal from "sweetalert2";
 import UserInfo from "./UserInfo";
+import useAllUsers from "../../Hooks/useAllUsers";
 const AllUsers = () => {
   const axiosSecure = AxiosSecure();
+  const [users, refetch] = useAllUsers();
 
-  const { data: users = [], refetch } = useQuery({
-    queryKey: ["users"],
-    queryFn: async () => {
-      const res = await axiosSecure.get("/users");
-      return res.data;
-    },
-  });
-  console.log(users);
 
   const handleMakeAdmin = (user) => {
     axiosSecure.patch(`/users/admin/${user._id}`).then((res) => {

@@ -7,8 +7,7 @@ import useAdmin from "../../../Hooks/useAdmin";
 const Header = () => {
     const { user, logOut } = useAuth();
     const navigate = useNavigate();
-    const [ isAdmin] = useAdmin();
-
+    const [isAdmin] = useAdmin();
 
 
 
@@ -51,7 +50,6 @@ const Header = () => {
                     <li><NavLink className={({ isActive, isPending }) =>
                         isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
                     } to={"/dashboard/reservation"}>Reservation</NavLink></li>
-
                 </>
                 :
                 <>
@@ -73,6 +71,7 @@ const Header = () => {
                                 <li><NavLink className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
                                 } to={"/dashboard/testResult"}>Test Result</NavLink></li>
+
                                 <li><NavLink className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "btn bg-[#219ebc]  text-white  btn-sm border-none " : "hover:text-white hover:bg-[#219ebc]"
                                 } to={"/ContactUs"}>ContactUs</NavLink></li>
