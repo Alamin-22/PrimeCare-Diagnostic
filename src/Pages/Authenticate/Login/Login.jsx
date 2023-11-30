@@ -23,7 +23,7 @@ const Login = () => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const email = form.get("email");
-        const password = form.get("password")
+        const password = form.get("password");
         // login
         console.log(email, password)
 
@@ -32,6 +32,7 @@ const Login = () => {
             .then(res => {
                 const user = res.user;
                 console.log(user);
+                
                 toast.success(`User Successfully Logged in`)
                 if (typeof isAdmin === 'undefined') {
                     navigate(location?.state ? location.state : '/dashboard/AdminProfile');

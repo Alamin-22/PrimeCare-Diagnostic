@@ -4,10 +4,12 @@ import { FaEdit } from "react-icons/fa";
 import Swal from "sweetalert2";
 import AxiosPublic from "../../Hooks/AxiosPublic";
 import { Link } from "react-router-dom";
+import AxiosSecure from "../../Hooks/AxiosSecure";
 
 const AdminAllTests = () => {
 
     const axiosPublic = AxiosPublic();
+    const axiosSecure = AxiosSecure();
 
 
     const { data: AllTest = [], refetch } = useQuery({
@@ -40,7 +42,7 @@ const AdminAllTests = () => {
 
 
 
-                axiosPublic.delete(`/test/${test._id}`)
+                axiosSecure.delete(`/test/${test._id}`)
                     .then(res => {
                         console.log(res.data)
                         if (res.data.deletedCount) {

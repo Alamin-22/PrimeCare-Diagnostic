@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { useState } from "react";
-import AxiosPublic from "../../Hooks/AxiosPublic";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import toast from "react-hot-toast";
 import { useLoaderData, useNavigate } from 'react-router-dom';
+import AxiosSecure from '../../Hooks/AxiosSecure';
 
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSING_KEY;
@@ -20,7 +20,7 @@ const UpdateTest = () => {
         availableDates, description, featured, time } = test[0];
     console.log(test[0]);
 
-    const axiosPublic = AxiosPublic();
+    const axiosSecure = AxiosSecure();
 
 
     const HandleUpdate = e => {
@@ -58,7 +58,7 @@ const UpdateTest = () => {
                 };
                 console.log(UpdateTest);
                 // send data to the server;
-                axiosPublic.patch(`/test/${_id}`, UpdateTest)
+                axiosSecure.patch(`/test/${_id}`, UpdateTest)
                     .then(res => {
                         toast.success('Test Successfully Updated!')
                         console.log(res.data);

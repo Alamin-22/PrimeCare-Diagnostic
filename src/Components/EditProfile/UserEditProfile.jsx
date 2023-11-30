@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
+
+
+import toast from 'react-hot-toast';
 import useDistricts from '../../Hooks/useDistricts';
 import AxiosSecure from '../../Hooks/AxiosSecure';
-import toast from 'react-hot-toast';
 
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSING_KEY;
@@ -9,7 +11,7 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 
 
 
-const EditProfile = ({ userData }) => {
+const UserEditProfile = ({ userData }) => {
 
     const { Name, District, Upazila, bloodGroup, _id, } = userData;
     const [Upzila, Districts] = useDistricts();
@@ -23,7 +25,7 @@ const EditProfile = ({ userData }) => {
         const Upazila = form.get("Upazila");
         const bloodGroup = form.get("bloodGroup");
         const phone = form.get("phone");
-       
+
         const formData = new FormData();
         formData.append('image', form.get("photo"));
 
@@ -42,11 +44,11 @@ const EditProfile = ({ userData }) => {
                     bloodGroup: bloodGroup,
                     photo: photo,
                     phone: phone,
-                    
+
                 };
                 console.log(UpdateUser);
                 // send data to the server;
-                axiosSecure.patch(`/users/AdminEdit/${_id}`, UpdateUser)
+                axiosSecure.patch(`/users/edit/${_id}`, UpdateUser)
                     .then(res => {
                         console.log(res.data)
                         if (res.data.modifiedCount > 0) {
@@ -150,10 +152,10 @@ const EditProfile = ({ userData }) => {
         </div>
     );
 };
-EditProfile.propTypes = {
+UserEditProfile.propTypes = {
     userData: PropTypes.object,
 };
-export default EditProfile;
+export default UserEditProfile;
 
 
 

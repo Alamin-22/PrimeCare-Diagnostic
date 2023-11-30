@@ -1,4 +1,4 @@
-import EditProfile from "../../Components/EditProfile/EditProfile";
+import UserEditProfile from "../../Components/EditProfile/UserEditProfile";
 import useUserData from "../../Hooks/useUserData";
 import { FaUserEdit } from "react-icons/fa";
 const Profile = () => {
@@ -21,7 +21,7 @@ const Profile = () => {
         );
     }
 
-    const { Name, Status, District, Upazila, bloodGroup, email, photo,  _id, phone } = userData;
+    const { Name, Status, District, Upazila, bloodGroup, email, photo, _id, phone } = userData;
 
     return (
         <div>
@@ -30,7 +30,7 @@ const Profile = () => {
                     <button onClick={() => document.getElementById('my_modal_4').showModal()} className=" absolute top-0 right-5 mt-5  btn bg-[#219ebc] hover:bg-[#3c738f] text-white  btn-sm "> <FaUserEdit className="text-lg" />Edit</button>
                     <dialog id="my_modal_4" className="modal">
                         <div className="modal-box">
-                            <EditProfile userData={userData}></EditProfile>
+                            <UserEditProfile userData={userData}></UserEditProfile>
                             <div className="modal-action">
                                 <form method="dialog">
                                     <button className="btn">Close</button>

@@ -3,6 +3,7 @@ import AxiosPublic from "../../Hooks/AxiosPublic";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSING_KEY;
@@ -11,7 +12,7 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 
 const AddTest = () => {
     const [date, setDate] = useState(new Date());
-
+    const navigate = useNavigate();
 
     const axiosPublic = AxiosPublic();
 
@@ -55,7 +56,7 @@ const AddTest = () => {
                     .then(res => {
                         toast.success('Test Successfully Added!')
                         console.log(res.data);
-
+                        navigate("/dashboard/observeAllTest")
                     })
                     .catch(error => {
                         console.log(error)

@@ -63,7 +63,7 @@ const TestResult = () => {
                         <div className="overflow-x-auto h-screen">
                             {TestDetails.filter(test => test.status === "Delivered").length === 0 ? (
                                 <p className="flex justify-center items-center text-red-600 text-center h-screen text-5xl">
-                                    No tests with status Delivered found.
+                                    No Tests Report is Delivered found.
                                 </p>
                             ) : (
                                 <table className="table table-zebra">

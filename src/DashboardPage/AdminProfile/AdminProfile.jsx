@@ -23,7 +23,7 @@ const AdminProfile = () => {
 
     // Destructure data
     const { Name, Status, District, Upazila, bloodGroup, email, photo, role, _id, phone } = userData;
-
+    console.log(userData)
     return (
         <div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 p-10 gap-10">
