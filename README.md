@@ -11,8 +11,7 @@ Welcome to PrimeCare Diagnostic Center, a cutting-edge platform designed to stre
 - **Database**: MongoDB
 - **Authentication**: Firebase Authentication
 - **Payment Gateway**: Stripe
-- **State Management**: Redux
-- **Server Hosting**: Heroku
+- **Server Hosting**: firebase
 - **File Upload**: ImageBB API
 
 ## Key Features
