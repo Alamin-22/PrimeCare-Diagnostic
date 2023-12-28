@@ -1,8 +1,9 @@
+import Intro from "./AboutComponents/Intro";
 
 const AboutUs = () => {
     return (
         <div>
-            This is the container of about us
+            <Intro></Intro>
         </div>
     );
 };
