@@ -14,8 +14,8 @@ const Docs = () => {
                         <div className="space-y-4">
                             <img alt="" className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500" src="https://i.ibb.co/2sqwsnz/Doc1.jpg" />
                             <div className="flex flex-col items-center">
-                                <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-                                <p className="text-sm dark:text-gray-400">Web developer</p>
+                                <h4 className="text-xl font-semibold">Dr. Emily Anderson</h4>
+                                <p className="text-sm dark:text-gray-400">Gynecologist</p>
                                 <div className="flex mt-2 space-x-2">
                                     <a rel="noopener noreferrer" href="#" title="Twitter" className="dark:text-gray-400">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" className="w-4 h-4">
@@ -38,8 +38,8 @@ const Docs = () => {
                         <div className="space-y-4">
                             <img alt="" className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500" src="https://i.ibb.co/M8qH0kT/Doc2.jpg" />
                             <div className="flex flex-col items-center">
-                                <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-                                <p className="text-sm dark:text-gray-400">Web developer</p>
+                                <h4 className="text-xl font-semibold">Dr. Christopher Thompson</h4>
+                                <p className="text-sm dark:text-gray-400">Cardiologist</p>
                                 <div className="flex mt-2 space-x-2">
                                     <a rel="noopener noreferrer" href="#" title="Twitter" className="dark:text-gray-400">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" className="w-4 h-4">
@@ -62,8 +62,8 @@ const Docs = () => {
                         <div className="space-y-4">
                             <img alt="" className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500" src="https://i.ibb.co/tq6tQTN/Doc3.jpg" />
                             <div className="flex flex-col items-center">
-                                <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-                                <p className="text-sm dark:text-gray-400">Web developer</p>
+                                <h4 className="text-xl font-semibold">Dr. David Mitchell</h4>
+                                <p className="text-sm dark:text-gray-400">Orthopedic Surgeon</p>
                                 <div className="flex mt-2 space-x-2">
                                     <a rel="noopener noreferrer" href="#" title="Twitter" className="dark:text-gray-400">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" className="w-4 h-4">
@@ -86,8 +86,8 @@ const Docs = () => {
                         <div className="space-y-4">
                             <img alt="" className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500" src="https://i.ibb.co/YWzgZLB/Doc4.jpg" />
                             <div className="flex flex-col items-center">
-                                <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-                                <p className="text-sm dark:text-gray-400">Web developer</p>
+                                <h4 className="text-xl font-semibold">Dr. Jonathan Adams</h4>
+                                <p className="text-sm dark:text-gray-400">Neurologist</p>
                                 <div className="flex mt-2 space-x-2">
                                     <a rel="noopener noreferrer" href="#" title="Twitter" className="dark:text-gray-400">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" className="w-4 h-4">
@@ -110,8 +110,8 @@ const Docs = () => {
                         <div className="space-y-4">
                             <img alt="" className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500" src="https://i.ibb.co/S79ZJqG/Doc5.jpg" />
                             <div className="flex flex-col items-center">
-                                <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-                                <p className="text-sm dark:text-gray-400">Web developer</p>
+                                <h4 className="text-xl font-semibold">Dr. Michael Rodriguez</h4>
+                                <p className="text-sm dark:text-gray-400">Pediatrician</p>
                                 <div className="flex mt-2 space-x-2">
                                     <a rel="noopener noreferrer" href="#" title="Twitter" className="dark:text-gray-400">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" className="w-4 h-4">
@@ -134,8 +134,8 @@ const Docs = () => {
                         <div className="space-y-4">
                             <img alt="" className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500" src="https://i.ibb.co/pLTrkJm/Doc6.jpg" />
                             <div className="flex flex-col items-center">
-                                <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-                                <p className="text-sm dark:text-gray-400">Web developer</p>
+                                <h4 className="text-xl font-semibold">Dr. Sophia Lewis</h4>
+                                <p className="text-sm dark:text-gray-400">Anesthesiologist</p>
                                 <div className="flex mt-2 space-x-2">
                                     <a rel="noopener noreferrer" href="#" title="Twitter" className="dark:text-gray-400">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" className="w-4 h-4">
@@ -158,8 +158,8 @@ const Docs = () => {
                         <div className="space-y-4">
                             <img alt="" className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500" src="https://i.ibb.co/85jCgzp/Doc7.jpg" />
                             <div className="flex flex-col items-center">
-                                <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-                                <p className="text-sm dark:text-gray-400">Web developer</p>
+                                <h4 className="text-xl font-semibold">Dr. Olivia Taylor</h4>
+                                <p className="text-sm dark:text-gray-400">Dermatologist</p>
                                 <div className="flex mt-2 space-x-2">
                                     <a rel="noopener noreferrer" href="#" title="Twitter" className="dark:text-gray-400">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" className="w-4 h-4">
@@ -182,8 +182,8 @@ const Docs = () => {
                         <div className="space-y-4">
                             <img alt="" className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500" src="https://source.unsplash.com/240x320/?portrait?7" />
                             <div className="flex flex-col items-center">
-                                <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-                                <p className="text-sm dark:text-gray-400">Web developer</p>
+                                <h4 className="text-xl font-semibold">Dr. Ava Johnson</h4>
+                                <p className="text-sm dark:text-gray-400">Psychiatrist</p>
                                 <div className="flex mt-2 space-x-2">
                                     <a rel="noopener noreferrer" href="#" title="Twitter" className="dark:text-gray-400">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" className="w-4 h-4">
