@@ -10,7 +10,7 @@ const Pricing = () => {
                         Unlock a healthier you! Subscribe for exclusive medical insights, expert tips, and special offers. Your path to wellness starts here at PrimeCare Diagnostics Center. Join us now!
                         </p>
                     </div>
-                    <div className="flex flex-wrap items-stretch -mx-4 mt-16">
+                    <div className="flex flex-wrap items-stretch mx-4 mt-16">
                         <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
                             <div className="flex flex-grow flex-col p-6 space-y-6 rounded shadow-xl sm:p-8 bg-gray-300 transition-transform transform hover:scale-110 hover:transition-duration-1500 cursor-pointer">
                                 <div className="space-y-2">
@@ -38,7 +38,7 @@ const Pricing = () => {
                                         <span>Tristique enim nec</span>
                                     </li>
                                 </ul>
-                                <button type="button" className="inline-block px-5 py-3 font-semibold  text-center rounded ">Get Started</button>
+                                <button type="button" className="btn btn-outline mt-1 w-full">Get Started</button>
                             </div>
                         </div>
                         <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
@@ -76,7 +76,7 @@ const Pricing = () => {
                                         <span>Aenean et lectus blandit</span>
                                     </li>
                                 </ul>
-                                <a rel="noopener noreferrer" href="#" className="inline-block w-full px-5 py-3 font-bold tracki text-center rounded ">Get Started</a>
+                                <a rel="noopener noreferrer" href="#" className="btn btn-outline mt-1 w-full">Get Started</a>
                             </div>
                         </div>
                         <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
@@ -120,7 +120,7 @@ const Pricing = () => {
                                         <span>Vivamus ut lectus ex</span>
                                     </li>
                                 </ul>
-                                <a rel="noopener noreferrer" href="#" className="inline-block w-full px-5 py-3 font-semibold tracki text-center rounded ">Get Started</a>
+                                <a rel="noopener noreferrer" href="#" className="btn btn-outline mt-1 w-full ">Get Started</a>
                             </div>
                         </div>
                     </div>
