@@ -12,7 +12,7 @@ const Pricing = () => {
                     </div>
                     <div className="flex flex-wrap items-stretch mx-4 mt-16">
                         <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
-                            <div className="flex flex-grow flex-col p-6 space-y-6 rounded shadow-xl sm:p-8 bg-gray-300 transition-transform transform hover:scale-110 hover:transition-duration-1500 cursor-pointer">
+                            <div className="flex flex-grow flex-col p-6 space-y-6 rounded shadow-xl sm:p-8 bg-gray-300 transition-transform transform hover:scale-110 transition-duration-1500 cursor-pointer">
                                 <div className="space-y-2">
                                     <h4 className="text-2xl font-bold">Beginner</h4>
                                     <span className="text-6xl font-bold">Free</span>
